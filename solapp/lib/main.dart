@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -48,6 +49,22 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  void openBottomSheet(BuildContext ctx) {
+    showModalBottomSheet(
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(40),
+        ),
+      ),
+      backgroundColor: Color.fromARGB(108, 255, 255, 255),
+      context: ctx,
+      builder: (ctx) {
+        return const Menu();
+      },
+    );
+  }
+
   int _counter = 0;
 
   void _incrementCounter() {
@@ -95,6 +112,10 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            ElevatedButton(
+              onPressed: () => openBottomSheet(context),
+              child: Text('Bottom Sheet'),
+            ),
             const Text(
               'You have pushed the button this many times:',
             ),

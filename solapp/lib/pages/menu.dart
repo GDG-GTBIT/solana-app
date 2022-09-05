@@ -23,7 +23,7 @@ class Menu extends StatelessWidget {
             padding: EdgeInsets.fromLTRB(30, 40, 30, 30),
             height: 450,
             decoration: BoxDecoration(
-              color: Color.fromARGB(213, 255, 255, 255),
+              color: Color.fromARGB(225, 255, 255, 255),
               border: Border.all(
                 color: Colors.transparent,
               ),

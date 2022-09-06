@@ -39,11 +39,11 @@ class _HomeState extends State<Home> {
           //upper half of the page
           Container(
             padding: EdgeInsets.only(top: 20),
-            alignment: Alignment.bottomLeft,
             height: 200,
             width: double.infinity,
             color: Color.fromARGB(173, 255, 255, 255),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 //tiger image
                 Container(

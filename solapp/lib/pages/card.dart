@@ -94,7 +94,6 @@ class _HomeState extends State<Home> {
                         colors: [
                           const Color.fromARGB(0, 255, 255, 255)
                               .withOpacity(0.5),
-                          const Color((0xFFFFFFFF)).withOpacity(0.5),
                         ],
                       ),
                       child: const GlassContainer(),

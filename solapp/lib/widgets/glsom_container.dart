@@ -72,11 +72,7 @@ class _GlassContainerState extends State<GlassContainer> {
                   ),
                   const SizedBox(width: 22),
                   InkWell(
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => BidNft(),
-                      ));
-                    },
+                    onTap: () {},
                     splashColor: Colors.black,
                     child: const CircleAvatar(
                       backgroundColor: Colors.white,

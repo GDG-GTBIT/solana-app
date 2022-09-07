@@ -69,7 +69,9 @@ class _HomeState extends State<Home> {
               SizedBox(
                 height: 460,
                 width: double.infinity,
-                child: GridView.count(padding: EdgeInsets.all(5),childAspectRatio: (75/100),
+                child: GridView.count(
+                  padding: EdgeInsets.all(5),
+                  childAspectRatio: (75 / 100),
                   crossAxisCount: 2,
                   crossAxisSpacing: 15,
                   mainAxisSpacing: 7,

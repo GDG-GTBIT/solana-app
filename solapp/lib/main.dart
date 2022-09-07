@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'components/cardFunction/gridview_widget.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 import './pages/card.dart';
 
@@ -13,8 +12,6 @@ class mainpage extends StatefulWidget {
 }
 
 class _mainpageState extends State<mainpage> {
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

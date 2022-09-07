@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class glas_cont extends StatefulWidget {
-  const glas_cont({super.key});
+class GlassContainer extends StatefulWidget {
+  const GlassContainer({super.key});
 
   @override
-  State<glas_cont> createState() => _glas_contState();
+  State<GlassContainer> createState() => _GlassContainerState();
 }
 
-class _glas_contState extends State<glas_cont> {
+class _GlassContainerState extends State<GlassContainer> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,7 +16,7 @@ class _glas_contState extends State<glas_cont> {
         children: [
           Container(
             alignment: Alignment.center,
-            margin: EdgeInsets.only(top: 8),
+            margin: const EdgeInsets.only(top: 8),
             decoration: BoxDecoration(
               color: Colors.orange,
               border: Border.all(color: Colors.transparent),
@@ -25,17 +25,17 @@ class _glas_contState extends State<glas_cont> {
             height: 163,
             width: 150,
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           Row(
             children: [
-              SizedBox(
+              const SizedBox(
                 width: 15,
               ),
               Container(
-                padding: EdgeInsets.only(left: 10),
-                child: Text(
+                padding: const EdgeInsets.only(left: 10),
+                child: const Text(
                   'lorean ipusum',
                   style: TextStyle(
                     fontSize: 10,
@@ -51,15 +51,15 @@ class _glas_contState extends State<glas_cont> {
             children: [
               Container(
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 180, 178, 178),
+                  color: const Color.fromARGB(255, 180, 178, 178),
                   border: Border.all(color: Colors.transparent),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 height: 20,
                 width: 75,
               ),
-              SizedBox(width: 22),
-              CircleAvatar(
+              const SizedBox(width: 22),
+              const CircleAvatar(
                 backgroundColor: Colors.white,
                 radius: 15,
                 child: Icon(

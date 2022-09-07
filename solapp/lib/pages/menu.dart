@@ -7,36 +7,35 @@ class Menu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 550,
-      padding: EdgeInsets.fromLTRB(10, 35, 10, 40),
+      padding: const EdgeInsets.fromLTRB(10, 35, 10, 40),
       decoration: BoxDecoration(
         border: Border.all(
-          color: Color.fromARGB(0, 255, 255, 255),
+          color: const Color.fromARGB(0, 255, 255, 255),
         ),
-        borderRadius: BorderRadius.all(
-          Radius.circular(40),
+        borderRadius: const BorderRadius.all( Radius.circular(40),
         ),
       ),
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.fromLTRB(30, 40, 30, 30),
+            padding: const EdgeInsets.fromLTRB(30, 40, 30, 30),
             height: 450,
             decoration: BoxDecoration(
-              color: Color.fromARGB(225, 255, 255, 255),
+              color: const Color.fromARGB(225, 255, 255, 255),
               border: Border.all(
                 color: Colors.transparent,
               ),
-              borderRadius: BorderRadius.all(
+              borderRadius: const BorderRadius.all(
                 Radius.circular(40),
               ),
             ),
             child: ListView(
-              children: <Widget>[
+              children: const <Widget>[
                 Card(
                   elevation: 10,
                   margin: EdgeInsets.symmetric(vertical: 20, horizontal: 5),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(8.0),
                     child: Center(
                       child: Text(
                         'Trending',
@@ -51,7 +50,7 @@ class Menu extends StatelessWidget {
                   elevation: 10,
                   margin: EdgeInsets.symmetric(vertical: 20, horizontal: 5),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(8.0),
                     child: Center(
                       child: Text(
                         'Loral',
@@ -66,7 +65,7 @@ class Menu extends StatelessWidget {
                   elevation: 10,
                   margin: EdgeInsets.symmetric(vertical: 20, horizontal: 5),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(8.0),
                     child: Center(
                       child: Text(
                         'Loral',
@@ -81,7 +80,7 @@ class Menu extends StatelessWidget {
                   elevation: 10,
                   margin: EdgeInsets.symmetric(vertical: 20, horizontal: 5),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(8.0),
                     child: Center(
                       child: Text(
                         'Loral',
@@ -96,7 +95,7 @@ class Menu extends StatelessWidget {
                   elevation: 10,
                   margin: EdgeInsets.symmetric(vertical: 20, horizontal: 5),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(8.0),
                     child: Center(
                       child: Text(
                         'Loral',
@@ -111,7 +110,7 @@ class Menu extends StatelessWidget {
                   elevation: 10,
                   margin: EdgeInsets.symmetric(vertical: 20, horizontal: 5),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(8.0),
                     child: Center(
                       child: Text(
                         'Loral',
@@ -125,8 +124,8 @@ class Menu extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(
+         const Padding( 
+            padding: EdgeInsets.only(
               top: 3,
             ),
             child: Text(

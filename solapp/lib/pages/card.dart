@@ -13,7 +13,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final textController = TextEditingController();
-  List so = [
+  List list = [
     {'text': 'play'},
     {'text': 'play'},
     {'text': 'play'},
@@ -32,23 +32,23 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromARGB(232, 0, 0, 0),
+      color: const Color.fromARGB(232, 0, 0, 0),
       height: double.infinity,
       width: double.infinity,
       child: Column(
         children: <Widget>[
-          upper_bar(),
+          const UpperBar(),
           //filter option
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Container(
             alignment: Alignment.topRight,
             child: SizedBox(
               width: double.infinity,
               height: 40,
               child: TextField(
-                style: TextStyle(color: Colors.black),
+                style: const TextStyle(color: Colors.black),
                 decoration: InputDecoration(
-                  suffixIcon: Icon(
+                  suffixIcon: const Icon(
                     Icons.filter_alt_outlined,
                     color: Colors.black,
                   ),
@@ -62,7 +62,7 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Stack(
             alignment: Alignment.bottomCenter,
             children: [
@@ -70,18 +70,20 @@ class _HomeState extends State<Home> {
                 height: 460,
                 width: double.infinity,
                 child: GridView.count(
-                  padding: EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
                   childAspectRatio: (75 / 100),
                   crossAxisCount: 2,
                   crossAxisSpacing: 15,
                   mainAxisSpacing: 7,
-                  children: so.map((e) {
+                  children: list.map((e) {
                     return GlassmorphicFlexContainer(
                       borderRadius: 35,
                       linearGradient: LinearGradient(
                         colors: [
-                          Color.fromARGB(255, 255, 255, 255).withOpacity(0.1),
-                          Color.fromARGB(255, 255, 255, 255).withOpacity(0.05),
+                          const Color.fromARGB(255, 255, 255, 255)
+                              .withOpacity(0.1),
+                          const Color.fromARGB(255, 255, 255, 255)
+                              .withOpacity(0.05),
                         ],
                       ),
                       border: 20,
@@ -90,16 +92,17 @@ class _HomeState extends State<Home> {
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                         colors: [
-                          Color.fromARGB(0, 255, 255, 255).withOpacity(0.5),
-                          Color((0xFFFFFFFF)).withOpacity(0.5),
+                          const Color.fromARGB(0, 255, 255, 255)
+                              .withOpacity(0.5),
+                          const Color((0xFFFFFFFF)).withOpacity(0.5),
                         ],
                       ),
-                      child: glas_cont(),
+                      child: const GlassContainer(),
                     );
                   }).toList(),
                 ),
               ),
-              Positioned(bottom: 15, child: menu_button())
+              const Positioned(bottom: 15, child: MenuButton())
             ],
           )
         ],

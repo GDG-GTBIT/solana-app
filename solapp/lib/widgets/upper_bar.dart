@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 
-class upper_bar extends StatelessWidget {
-  const upper_bar({super.key});
+class UpperBar extends StatelessWidget {
+  const UpperBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 20),
+      padding: const EdgeInsets.only(top: 20),
       height: 200,
       width: double.infinity,
-      color: Color.fromARGB(173, 255, 255, 255),
+      color: const Color.fromARGB(173, 255, 255, 255),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           //tiger image
-          Container(
+          const SizedBox(
             height: double.infinity,
-            child: Image.asset('nft11.jpg'),
           ),
-
+          Image.asset('nft11.jpg'),
           //content beside the tiger image
           Column(
             children: <Widget>[
@@ -28,14 +27,14 @@ class upper_bar extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border.all(color: Colors.transparent),
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topRight: Radius.circular(20),
                     bottomLeft: Radius.circular(20),
                   ),
                 ),
                 child: Row(
                   children: [
-                    Text(
+                    const Text(
                       'TIGER DEV',
                       style:
                           TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
@@ -46,12 +45,12 @@ class upper_bar extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Container(
+                  const SizedBox(
                     height: 12,
                     width: 16,
-                    child: Image.asset('image2.jpg'),
                   ),
-                  Text(
+                  Image.asset('image2.jpg'),
+                  const Text(
                     'GDSC-GTBIT',
                     style: TextStyle(
                       fontSize: 10,
@@ -67,17 +66,17 @@ class upper_bar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Container(
-                    margin: EdgeInsets.only(top: 20),
+                    margin:const  EdgeInsets.only(top: 20),
                     width: 60,
                     height: 65,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.transparent),
                       borderRadius: BorderRadius.circular(20),
-                      color: Color.fromARGB(255, 247, 169, 208),
+                      color:const  Color.fromARGB(255, 247, 169, 208),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                      children:const [
                         Text(
                           '0.53',
                           style: TextStyle(
@@ -86,7 +85,7 @@ class upper_bar extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          'Lorem IPSUM',
+                          'Lorem Ipsum',
                           style: TextStyle(
                             fontSize: 7,
                             fontWeight: FontWeight.bold,
@@ -95,23 +94,23 @@ class upper_bar extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(
+                 const SizedBox(
                     width: 7,
                   ),
                   Column(
                     children: <Widget>[
                       Container(
-                        margin: EdgeInsets.only(top: 8),
+                        margin:const EdgeInsets.only(top: 8),
                         width: 60,
                         height: 47,
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.transparent),
                           borderRadius: BorderRadius.circular(20),
-                          color: Color.fromARGB(223, 143, 141, 143),
+                          color:const Color.fromARGB(223, 143, 141, 143),
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
+                          children:const [
                             Text(
                               '0.53',
                               style: TextStyle(
@@ -120,7 +119,7 @@ class upper_bar extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              'Lorem IPSUM',
+                              'Lorem Ipsum',
                               style: TextStyle(
                                 fontSize: 8,
                                 fontWeight: FontWeight.bold,
@@ -130,17 +129,17 @@ class upper_bar extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 8),
+                        margin:const EdgeInsets.only(top: 8),
                         width: 60,
                         height: 47,
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.transparent),
                           borderRadius: BorderRadius.circular(20),
-                          color: Color.fromARGB(255, 240, 240, 240),
+                          color: const Color.fromARGB(255, 240, 240, 240),
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
+                          children:const [
                             Text(
                               '0.53',
                               style: TextStyle(
@@ -149,7 +148,7 @@ class upper_bar extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              'Lorem IPSUM',
+                              'Lorem Ipsum',
                               style: TextStyle(
                                 fontSize: 8,
                                 fontWeight: FontWeight.bold,

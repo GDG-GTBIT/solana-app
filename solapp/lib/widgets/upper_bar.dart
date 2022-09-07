@@ -22,8 +22,8 @@ class UpperBar extends StatelessWidget {
           Column(
             children: <Widget>[
               Container(
-                width: 180,
-                height: 50,
+                width: 170,
+                height: 30,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border.all(color: Colors.transparent),
@@ -45,10 +45,6 @@ class UpperBar extends StatelessWidget {
               ),
               Row(
                 children: [
-                  const SizedBox(
-                    height: 12,
-                    width: 16,
-                  ),
                   Image.asset('image2.jpg'),
                   const Text(
                     'GDSC-GTBIT',
@@ -66,17 +62,17 @@ class UpperBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Container(
-                    margin:const  EdgeInsets.only(top: 20),
+                    // margin: const EdgeInsets.only(top: 8),
                     width: 60,
-                    height: 65,
+                    height: 38,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.transparent),
                       borderRadius: BorderRadius.circular(20),
-                      color:const  Color.fromARGB(255, 247, 169, 208),
+                      color: const Color.fromARGB(255, 247, 169, 208),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children:const [
+                      children: const [
                         Text(
                           '0.53',
                           style: TextStyle(
@@ -94,23 +90,20 @@ class UpperBar extends StatelessWidget {
                       ],
                     ),
                   ),
-                 const SizedBox(
-                    width: 7,
-                  ),
                   Column(
                     children: <Widget>[
                       Container(
-                        margin:const EdgeInsets.only(top: 8),
+                        // margin: const EdgeInsets.only(top: 8),
                         width: 60,
-                        height: 47,
+                        height: 38,
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.transparent),
                           borderRadius: BorderRadius.circular(20),
-                          color:const Color.fromARGB(223, 143, 141, 143),
+                          color: const Color.fromARGB(223, 143, 141, 143),
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children:const [
+                          children: const [
                             Text(
                               '0.53',
                               style: TextStyle(
@@ -129,9 +122,9 @@ class UpperBar extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        margin:const EdgeInsets.only(top: 8),
+                        // margin: const EdgeInsets.only(top: 8),
                         width: 60,
-                        height: 47,
+                        height: 38,
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.transparent),
                           borderRadius: BorderRadius.circular(20),
@@ -139,7 +132,7 @@ class UpperBar extends StatelessWidget {
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children:const [
+                          children: const [
                             Text(
                               '0.53',
                               style: TextStyle(

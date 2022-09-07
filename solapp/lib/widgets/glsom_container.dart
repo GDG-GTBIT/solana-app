@@ -16,7 +16,7 @@ class _GlassContainerState extends State<GlassContainer> {
         children: [
           Container(
             alignment: Alignment.center,
-            margin: const EdgeInsets.only(top: 8),
+            margin: const EdgeInsets.all(50),
             decoration: BoxDecoration(
               color: Colors.orange,
               border: Border.all(color: Colors.transparent),
@@ -36,7 +36,7 @@ class _GlassContainerState extends State<GlassContainer> {
               Container(
                 padding: const EdgeInsets.only(left: 10),
                 child: const Text(
-                  'lorean ipusum',
+                  'Lorem Ipsum',
                   style: TextStyle(
                     fontSize: 10,
                     fontWeight: FontWeight.bold,

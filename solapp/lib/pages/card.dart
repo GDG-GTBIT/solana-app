@@ -44,7 +44,7 @@ class _HomeState extends State<Home> {
             alignment: Alignment.topRight,
             child: SizedBox(
               width: double.infinity,
-              height: 40,
+              height: 50,
               child: TextField(
                 style: const TextStyle(color: Colors.black),
                 decoration: InputDecoration(

@@ -17,6 +17,7 @@ class _MainPageState extends State<MainPage> {
       home: Scaffold(
         body: Home(),
       ),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

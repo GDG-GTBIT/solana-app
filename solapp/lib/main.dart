@@ -18,6 +18,27 @@ class App extends StatelessWidget {
         backgroundColor: Color.fromARGB(155, 255, 255, 255),
         body: Stack(alignment: Alignment.bottomCenter, children: [
           Container(
+            height: double.infinity,
+            width: double.infinity,
+            child: Align(
+              alignment: Alignment.topRight,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 84,
+                    child: Container(
+                      width: double.infinity,
+                      child: Align(
+                        alignment: Alignment.bottomRight,
+                        child: Icon(Icons.back_hand_outlined),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Container(
             width: double.infinity,
             height: double.infinity,
             child: Column(
@@ -25,15 +46,12 @@ class App extends StatelessWidget {
                 SizedBox(
                   height: 65,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.back_hand_outlined),
-                    SizedBox(
-                      width: 300,
-                    ),
-                    Icon(Icons.wallet),
-                  ],
+                Container(
+                  width: double.infinity,
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Icon(Icons.back_hand_outlined),
+                  ),
                 ),
                 SizedBox(
                   height: 25,

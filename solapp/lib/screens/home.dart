@@ -11,6 +11,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        // ignore: avoid_unnecessary_containers
         body: Container(
           child: Stack(
             alignment: Alignment.bottomCenter,
@@ -67,6 +68,7 @@ class Home extends StatelessWidget {
                         height: 20.0,
                         width: 15.0,
                       ),
+                      // ignore: sized_box_for_whitespace
                       Container(
                         width: 300,
                         child: const Center(
@@ -93,7 +95,7 @@ class Home extends StatelessWidget {
               Positioned(
                 child: GestureDetector(
                   onTap: () {
-                    print('Tap');
+                    // print('Tap');
                   },
                   child: Container(
                     alignment: Alignment.bottomCenter,

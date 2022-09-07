@@ -1,0 +1,48 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "$R7DJ4Z4",
+            "cwd": "$Recycle.Bin\\S-1-5-21-3580654042-3863985637-1304152190-1000\\$R7DJ4Z4",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "$R7DJ4Z4 (profile mode)",
+            "cwd": "$Recycle.Bin\\S-1-5-21-3580654042-3863985637-1304152190-1000\\$R7DJ4Z4",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "$R7DJ4Z4 (release mode)",
+            "cwd": "$Recycle.Bin\\S-1-5-21-3580654042-3863985637-1304152190-1000\\$R7DJ4Z4",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "solana_flutter_frontend",
+            "cwd": "Users\\SARAVJOT SINGH\\StudioProjects\\solana_flutter_frontend",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "solana_flutter_frontend (profile mode)",
+            "cwd": "Users\\SARAVJOT SINGH\\StudioProjects\\solana_flutter_frontend",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "solana_flutter_frontend (release mode)",
+            "cwd": "Users\\SARAVJOT SINGH\\StudioProjects\\solana_flutter_frontend",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

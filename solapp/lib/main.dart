@@ -1,62 +1,47 @@
-import "package:flutter/material.dart";
+import 'package:flutter/material.dart';
+import 'components/cardFunction/gridview_widget.dart';
+import 'package:glassmorphism/glassmorphism.dart';
 import './pages/card.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() => runApp(mainpage());
+
+class mainpage extends StatefulWidget {
+  const mainpage({super.key});
+
+  @override
+  State<mainpage> createState() => _mainpageState();
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class _mainpageState extends State<mainpage> {
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      home: Scaffold(
+        body: Home(),
+        // body: GridView.count(
+        //     crossAxisCount: 2,
+        //     children: so.map((e) {
+        //       return GlassmorphicFlexContainer(
+        //         borderRadius: 2,
+        //         linearGradient: LinearGradient(colors: [
+        //           Color.fromARGB(180, 255, 255, 255),
+        //           Color.fromARGB(100, 255, 255, 255)
+        //         ]),
+        //         border: 0,
+        //         blur: 15,
+        //         borderGradient: LinearGradient(colors: [
+        //           Color.fromARGB(180, 255, 255, 255),
+        //           Color.fromARGB(100, 255, 255, 255)
+        //         ]),
+        //         child: Text(
+        //           e['text'],
+        //           style: TextStyle(color: Colors.black),
+        //         ),
+        //       );
+        //     }).toList()),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      debugShowCheckedModeBanner: false,
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      // appBar: AppBar(
-      //   title: Text(widget.title),
-      // ),
-      body: Home(),
-      // body: Center(
-      //   child: Column(
-      //     mainAxisAlignment: MainAxisAlignment.center,
-      //     children: <Widget>[
-      //       const Text(
-      //         'You have pushed the button this many times:',
-      //       ),
-      //       Text(
-      //         '$_counter',
-      //         style: Theme.of(context).textTheme.headline4,
-      //       ),
-      //     ],
-      //   ),
-      // ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: _incrementCounter,
-      //   tooltip: 'Increment',
-      //   child: const Icon(Icons.add),
-      // ),
     );
   }
 }

@@ -11,8 +11,9 @@ class GridviewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
+      scrollDirection: Axis.vertical,
       padding: const EdgeInsets.all(35),
-      crossAxisSpacing: 20,
+      crossAxisSpacing: 50,
       mainAxisSpacing: 20,
       crossAxisCount: 2,
       children: ma.map((gs) {
@@ -34,18 +35,18 @@ class GridviewWidget extends StatelessWidget {
               Color((0xFFFFFFFF)).withOpacity(0.5),
             ],
           ),
-          child: Container(
-            height: 55,
-            width: 100,
-            child: Text(
-              gs['title'].toString(),
-              style: TextStyle(
-                color: Colors.white54,
-                fontSize: 35,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ),
+          // child: Container(
+          //   height: 55,
+          //   width: 100,
+          //   child: Text(
+          //     gs['title'].toString(),
+          //     style: TextStyle(
+          //       color: Colors.white54,
+          //       fontSize: 35,
+          //     ),
+          //     textAlign: TextAlign.center,
+          //   ),
+          // ),
         );
       }).toList(),
     );

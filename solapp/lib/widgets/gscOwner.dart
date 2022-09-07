@@ -1,7 +1,9 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
-class owner extends StatelessWidget {
-  const owner({super.key});
+class Owner extends StatelessWidget {
+  const Owner({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +11,7 @@ class owner extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
+        children:const [
           Text('OWNER'),
           SizedBox(
             height: 2,

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class price extends StatelessWidget {
-  const price({super.key});
+class Price extends StatelessWidget {
+  const Price({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 3,
         ),
         Align(
@@ -16,15 +16,15 @@ class price extends StatelessWidget {
             height: 55,
             width: 40,
             alignment: Alignment.centerLeft,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 color: Colors.blueAccent,
                 borderRadius: BorderRadius.all(Radius.circular(10))),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 4,
         ),
-        Align(
+        const Align(
           alignment: Alignment.centerLeft,
           child: Text(
             '0.56',
@@ -34,7 +34,7 @@ class price extends StatelessWidget {
             ),
           ),
         ),
-        Align(
+        const Align(
           alignment: Alignment.centerLeft,
           child: Text(
             'Loren ipsum',

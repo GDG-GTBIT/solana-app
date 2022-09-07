@@ -1,31 +1,31 @@
 import 'package:flutter/material.dart';
 import '../widgets/castBottom.dart';
 
-class bid_nft extends StatefulWidget {
-  const bid_nft({super.key});
+class BidNft extends StatefulWidget {
+  const BidNft({super.key});
 
   @override
-  State<bid_nft> createState() => _bid_nftState();
+  State<BidNft> createState() => _BidNftState();
 }
 
-class _bid_nftState extends State<bid_nft> {
+class _BidNftState extends State<BidNft> {
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.black45,
       child: Scaffold(
-        backgroundColor: Color.fromARGB(155, 255, 255, 255),
+        backgroundColor: const Color.fromARGB(155, 255, 255, 255),
         body: Stack(alignment: Alignment.bottomCenter, children: [
-          Container(
+          SizedBox(
             height: double.infinity,
             width: double.infinity,
             child: Align(
               alignment: Alignment.topRight,
               child: Column(
-                children: [
+                children: const [
                   SizedBox(
                     height: 84,
-                    child: Container(
+                    child: SizedBox(
                       width: double.infinity,
                       child: Align(
                         alignment: Alignment.bottomRight,
@@ -37,25 +37,25 @@ class _bid_nftState extends State<bid_nft> {
               ),
             ),
           ),
-          Container(
+          SizedBox(
             width: double.infinity,
             height: double.infinity,
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 65,
                 ),
-                Container(
+                const SizedBox(
                   width: double.infinity,
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Icon(Icons.back_hand_outlined),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
-                Container(
+                const SizedBox(
                   height: 25,
                   width: 250,
                   child: Text(
@@ -64,40 +64,40 @@ class _bid_nftState extends State<bid_nft> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(left: 10),
+                  margin:const EdgeInsets.only(left: 10),
                   alignment: Alignment.centerLeft,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 120,
                       ),
                       Container(
                         height: 45,
                         width: 35,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Colors.lightBlueAccent,
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Container(
                         height: 45,
                         width: 35,
-                        decoration: BoxDecoration(
+                        decoration:const BoxDecoration(
                           color: Colors.lightBlueAccent,
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Container(
                         height: 45,
                         width: 35,
-                        decoration: BoxDecoration(
+                        decoration:const  BoxDecoration(
                           color: Colors.lightBlueAccent,
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                         ),
@@ -112,7 +112,7 @@ class _bid_nftState extends State<bid_nft> {
             width: 275,
             height: 270,
             alignment: Alignment.center,
-            child: bid(),
+            child: const Bid(),
           )
         ]),
       ),

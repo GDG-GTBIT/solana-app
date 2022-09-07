@@ -96,7 +96,11 @@ class Home extends StatelessWidget {
               Positioned(
                 child: GestureDetector(
                   onTap: () {
-                    const Menu();
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => Menu(),
+                      ),
+                    );
                   },
                   child: Container(
                     alignment: Alignment.bottomCenter,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:solapp/screens/card.dart';
+import 'package:solapp/widgets/card.dart';
 
 void main() {
   runApp(const Home());

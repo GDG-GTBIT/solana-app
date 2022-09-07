@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../widgets/upper_bar.dart';
-import '../widgets/menu_button.dart';
+import 'upper_bar.dart';
+import 'menu_button.dart';
 import 'package:glassmorphism/glassmorphism.dart';
-import '../widgets/glsom_container.dart';
+import 'glsom_container.dart';
 
 class Menu extends StatefulWidget {
   const Menu({super.key});

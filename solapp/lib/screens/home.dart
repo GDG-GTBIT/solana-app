@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(App());
+  runApp(const Home());
 }
 
-class App extends StatelessWidget {
-  const App({super.key});
+class Home extends StatelessWidget {
+  const Home({super.key});
   void so() {}
   @override
   Widget build(BuildContext context) {
@@ -18,10 +18,10 @@ class App extends StatelessWidget {
               Container(
                 height: double.infinity,
                 width: double.infinity,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage(
-                          'assests/1jpeg.jpg',
+                          'assets/1jpeg.jpg',
                         ),
                         fit: BoxFit.fill)),
               ),
@@ -30,7 +30,7 @@ class App extends StatelessWidget {
                   height: 450,
                   width: double.infinity,
                   alignment: Alignment.bottomCenter,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
                         Color.fromARGB(255, 255, 255, 255),
@@ -44,14 +44,14 @@ class App extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 120.0,
                         width: 150.0,
                       ),
                       Container(
                         alignment: Alignment.bottomCenter,
                         width: double.infinity,
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             textAlign: TextAlign.center,
                             'Discover NFT Collections',
@@ -63,13 +63,13 @@ class App extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20.0,
                         width: 15.0,
                       ),
                       Container(
                         width: 300,
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             textAlign: TextAlign.center,
                             'Explore the top collections of NFTs and buy and sell your NFTs as well',
@@ -118,17 +118,17 @@ class App extends StatelessWidget {
                                   BorderRadius.all(Radius.circular(10))
                               //more than 50% of width makes circle
                               ),
-                          child: Icon(
+                          child: const Icon(
                             Icons.arrow_forward_ios_rounded,
                             color: Colors.black,
                             size: 30.0,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20.0,
                           width: 30.0,
                         ),
-                        Text(
+                        const Text(
                           'Start Experience',
                           textAlign: TextAlign.center,
                           style: TextStyle(

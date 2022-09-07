@@ -4,14 +4,14 @@ import '../widgets/menu_button.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 import '../widgets/glsom_container.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class Menu extends StatefulWidget {
+  const Menu({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Menu> createState() => _MenuState();
 }
 
-class _HomeState extends State<Home> {
+class _MenuState extends State<Menu> {
   final textController = TextEditingController();
   List list = [
     {'text': 'play'},

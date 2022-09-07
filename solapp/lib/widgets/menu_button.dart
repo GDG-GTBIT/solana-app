@@ -14,7 +14,7 @@ class MenuButton extends StatelessWidget {
       backgroundColor: const Color.fromARGB(100, 255, 255, 255),
       context: ctx,
       builder: (ctx) {
-        return const Menu();
+        return const MenuCard();
       },
     );
   }

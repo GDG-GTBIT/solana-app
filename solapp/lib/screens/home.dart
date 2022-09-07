@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:solapp/screens/card.dart';
 
 void main() {
   runApp(const Home());
@@ -95,7 +96,7 @@ class Home extends StatelessWidget {
               Positioned(
                 child: GestureDetector(
                   onTap: () {
-                    // print('Tap');
+                    const Menu();
                   },
                   child: Container(
                     alignment: Alignment.bottomCenter,

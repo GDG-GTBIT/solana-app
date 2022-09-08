@@ -65,6 +65,7 @@ flutter:
     - assets/nft11.jpg
     - assets/Asset11.jpg
     - assets/image2.jpg
+    - assets/tigerdev.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

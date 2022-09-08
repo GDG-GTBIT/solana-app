@@ -29,7 +29,7 @@ class _BidNftState extends State<BidNft> {
                       width: double.infinity,
                       child: Align(
                         alignment: Alignment.bottomRight,
-                        child: Icon(Icons.back_hand_outlined),
+                        child: Icon(Icons.account_balance_wallet_outlined),
                       ),
                     ),
                   ),
@@ -45,13 +45,22 @@ class _BidNftState extends State<BidNft> {
                 const SizedBox(
                   height: 65,
                 ),
-                const SizedBox(
-                  width: double.infinity,
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Icon(Icons.back_hand_outlined),
+                Container(
+                  alignment: Alignment.topLeft,
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(Icons.arrow_back),
                   ),
                 ),
+                // const SizedBox(
+                //   width: double.infinity,
+                //   child: Align(
+                //     alignment: Alignment.centerLeft,
+                //     child: Icon(Icons.back_hand_outlined),
+                //   ),
+                // ),
                 const SizedBox(
                   height: 25,
                 ),
@@ -64,7 +73,7 @@ class _BidNftState extends State<BidNft> {
                   ),
                 ),
                 Container(
-                  margin:const EdgeInsets.only(left: 10),
+                  margin: const EdgeInsets.only(left: 10),
                   alignment: Alignment.centerLeft,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -86,7 +95,7 @@ class _BidNftState extends State<BidNft> {
                       Container(
                         height: 45,
                         width: 35,
-                        decoration:const BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Colors.lightBlueAccent,
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                         ),
@@ -97,7 +106,7 @@ class _BidNftState extends State<BidNft> {
                       Container(
                         height: 45,
                         width: 35,
-                        decoration:const  BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Colors.lightBlueAccent,
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                         ),

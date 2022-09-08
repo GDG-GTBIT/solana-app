@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'upper_bar.dart';
 import 'menu_button.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 import 'glsom_container.dart';
@@ -36,18 +35,18 @@ class _MenuState extends State<Menu> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blueGrey,
-          bottom: PreferredSize(
+          bottom: const PreferredSize(
+              preferredSize: Size.fromHeight(150),
               child: SizedBox(
                 height: 150,
                 child: Align(
                   alignment: Alignment.bottomRight,
                 ),
-              ),
-              preferredSize: Size.fromHeight(150)),
+              )),
           flexibleSpace: FittedBox(
             fit: BoxFit.fill,
             child: Stack(alignment: Alignment.bottomRight, children: [
-              Image(
+              const Image(
                 image: AssetImage(
                   'assets/tigerdev.jpg',
                 ),
@@ -59,9 +58,10 @@ class _MenuState extends State<Menu> {
                   height: 70,
                   width: 180,
                   decoration: BoxDecoration(
-                      color: Color.fromARGB(153, 255, 214, 64),
+                      color: const Color.fromARGB(153, 255, 214, 64),
                       border: Border.all(color: Colors.transparent),
-                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(20))),
                 ),
               )
             ]),
@@ -84,7 +84,7 @@ class _MenuState extends State<Menu> {
                 return InkWell(
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => BidNft(),
+                      builder: (context) => const BidNft(),
                     ));
                   },
                   child: GlassmorphicFlexContainer(

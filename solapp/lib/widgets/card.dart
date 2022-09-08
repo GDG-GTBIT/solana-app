@@ -81,12 +81,12 @@ class _MenuState extends State<Menu> {
                         crossAxisSpacing: 15,
                         mainAxisSpacing: 7,
                         shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
+                        physics: const NeverScrollableScrollPhysics(),
                         children: list.map((e) {
                           return InkWell(
                             onTap: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => BidNft(),
+                                builder: (context) => const BidNft(),
                               ));
                             },
                             child: GlassmorphicFlexContainer(

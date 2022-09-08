@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../screens/bid.dart';
 
 class GlassContainer extends StatefulWidget {
   const GlassContainer({super.key});

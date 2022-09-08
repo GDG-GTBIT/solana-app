@@ -24,7 +24,7 @@ class _BidNftState extends State<BidNft> {
               child: Column(
                 children: const [
                   SizedBox(
-                    height: 84,
+                    height: 85,
                     child: SizedBox(
                       width: double.infinity,
                       child: Align(

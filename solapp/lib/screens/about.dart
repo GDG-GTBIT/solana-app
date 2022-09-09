@@ -16,9 +16,9 @@ class AboutPage extends StatelessWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: FloatingActionButton(
-                child: Text('About'),
                 onPressed: () {},
                 backgroundColor: Colors.black,
+                child: const Text('About'),
               ),
             ),
           ],

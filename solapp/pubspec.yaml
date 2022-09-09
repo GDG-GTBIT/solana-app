@@ -38,6 +38,7 @@ dependencies:
   glassmorphism: ^3.0.0
   google_fonts: ^3.0.1
   url_launcher: ^6.1.5
+  slide_to_act: ^2.0.1
  
 
 
@@ -70,6 +71,7 @@ flutter:
     - assets/image2.jpg
     - assets/tigerdev.jpg
     - assets/solana_icon.png
+    - assets/background.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

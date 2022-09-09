@@ -60,7 +60,7 @@ class _MenuState extends State<Menu> {
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => const AboutPage(),
+                        builder: (context) => AboutPage(),
                       ),
                     );
                   },

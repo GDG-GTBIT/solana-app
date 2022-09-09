@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutPage extends StatelessWidget {
-  const AboutPage({super.key});
+  AboutPage({super.key});
+  final Uri _url = Uri.parse(
+      'https://gdsc.community.dev/guru-tegh-bahadur-institute-of-technology-delhi/');
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+      throw 'Could not launch $_url';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +31,11 @@ class AboutPage extends StatelessWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: FloatingActionButton(
-                onPressed: () {},
+                onPressed: () {
+                  _launchUrl();
+                },
                 backgroundColor: Colors.black,
-                child: Icon(Icons.web),
+                child: Image.asset('image2.jpg'),
               ),
             ),
           ],

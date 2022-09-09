@@ -45,44 +45,37 @@ class _MenuState extends State<Menu> {
                   alignment: Alignment.bottomRight,
                 ),
               )),
-          flexibleSpace: FittedBox(
-            fit: BoxFit.fill,
-            child: Stack(alignment: Alignment.bottomRight, children: [
-              const Image(
-                image: AssetImage(
-                  'assets/tigerdev.jpg',
+          flexibleSpace: Stack(alignment: Alignment.bottomRight, children: [
+            const Image(
+              image: AssetImage(
+                'assets/tigerdev.jpg',
+              ),
+              fit: BoxFit.fill,
+              width: 1000,
+            ),
+            Positioned(
+              bottom: 30,
+              right: 30,
+              child: InkWell(
+                onTap: () {},
+                child: Container(
+                  child: Center(
+                    child: Text(
+                      'ABOUT',
+                      style: TextStyle(fontSize: 15, color: Colors.white),
+                    ),
+                  ),
+                  height: 50,
+                  width: 80,
+                  decoration: BoxDecoration(
+                      color: Colors.black,
+                      border: Border.all(color: Colors.transparent),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(20))),
                 ),
               ),
-              Positioned(
-                bottom: 30,
-                right: 30,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => AboutPage(),
-                      ),
-                    );
-                  },
-                  child: Container(
-                    child: Center(
-                      child: Text(
-                        'ABOUT',
-                        style: TextStyle(fontSize: 25, color: Colors.white),
-                      ),
-                    ),
-                    height: 70,
-                    width: 180,
-                    decoration: BoxDecoration(
-                        color: Colors.black,
-                        border: Border.all(color: Colors.transparent),
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(20))),
-                  ),
-                ),
-              )
-            ]),
-          ),
+            )
+          ]),
         ),
         resizeToAvoidBottomInset: false,
         body: Container(
@@ -104,25 +97,7 @@ class _MenuState extends State<Menu> {
                       builder: (context) => const BidNft(),
                     ));
                   },
-                  child: GlassmorphicFlexContainer(
-                    borderRadius: 35,
-                    linearGradient: LinearGradient(
-                      colors: [
-                        const Color.fromARGB(255, 255, 255, 255)
-                            .withOpacity(0.1),
-                        const Color.fromARGB(255, 255, 255, 255)
-                            .withOpacity(0.05),
-                      ],
-                    ),
-                    border: 20,
-                    blur: 20,
-                    borderGradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        const Color.fromARGB(0, 255, 255, 255).withOpacity(0.5),
-                      ],
-                    ),
+                  child: Container(
                     child: const GlassContainer(),
                   ),
                 );

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:solapp/screens/about.dart';
 import 'menu_button.dart';
 import 'package:glassmorphism/glassmorphism.dart';
 import 'glsom_container.dart';
 import '../screens/bid.dart';
+import 'package:flutter/material.dart';
 
 class Menu extends StatefulWidget {
   const Menu({super.key});
@@ -54,14 +56,29 @@ class _MenuState extends State<Menu> {
               Positioned(
                 bottom: 30,
                 right: 30,
-                child: Container(
-                  height: 70,
-                  width: 180,
-                  decoration: BoxDecoration(
-                      color: const Color.fromARGB(153, 255, 214, 64),
-                      border: Border.all(color: Colors.transparent),
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(20))),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const AboutPage(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    child: Center(
+                      child: Text(
+                        'ABOUT',
+                        style: TextStyle(fontSize: 15),
+                      ),
+                    ),
+                    height: 70,
+                    width: 180,
+                    decoration: BoxDecoration(
+                        color: const Color.fromARGB(153, 255, 214, 64),
+                        border: Border.all(color: Colors.transparent),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(20))),
+                  ),
                 ),
               )
             ]),

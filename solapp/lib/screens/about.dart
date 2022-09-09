@@ -8,6 +8,12 @@ class AboutPage extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          leading: BackButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            color: Colors.black,
+          ),
           backgroundColor: Colors.black,
         ),
         body: Stack(

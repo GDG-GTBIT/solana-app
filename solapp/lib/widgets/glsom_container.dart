@@ -40,7 +40,7 @@ class _GlassContainerState extends State<GlassContainer> {
                 alignment: Alignment.center,
                 margin: const EdgeInsets.only(top: 10),
                 decoration: BoxDecoration(
-                  color: Colors.orange,
+                  image: DecorationImage(image: NetworkImage(widget.image)),
                   border: Border.all(color: Colors.transparent),
                   borderRadius: BorderRadius.circular(20),
                 ),

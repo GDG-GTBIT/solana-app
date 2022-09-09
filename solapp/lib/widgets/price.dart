@@ -13,6 +13,11 @@ class Price extends StatelessWidget {
         Align(
           alignment: Alignment.centerLeft,
           child: Container(
+            child: Padding(
+              padding: const EdgeInsets.all(3.0),
+              child:
+                  CircleAvatar(backgroundImage: AssetImage('solana_icon.png')),
+            ),
             height: 55,
             width: 40,
             alignment: Alignment.centerLeft,

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "603996485236",
+    "firebase_url": "https://testing-c8f6a-default-rtdb.firebaseio.com",
+    "project_id": "testing-c8f6a",
+    "storage_bucket": "testing-c8f6a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:603996485236:android:d94fec2c844f48e47d0321",
+        "android_client_info": {
+          "package_name": "com.example.solapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "603996485236-an8tt93moin1itdet38ce6abhere05hj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYtlbySEJt0yFtfQgBdf2moxeLRYjAg6w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "603996485236-an8tt93moin1itdet38ce6abhere05hj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "603996485236-5kl9dh21891e2ph16tqu359ssl50pg7d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.solapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

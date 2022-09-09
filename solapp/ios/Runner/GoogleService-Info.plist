@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>603996485236-5kl9dh21891e2ph16tqu359ssl50pg7d.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.603996485236-5kl9dh21891e2ph16tqu359ssl50pg7d</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCevISIud5UI-03k8tPwnLBMUJ3vnejnXY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>603996485236</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.solapp</string>
+	<key>PROJECT_ID</key>
+	<string>testing-c8f6a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>testing-c8f6a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:603996485236:ios:104b3e37c084a8877d0321</string>
+	<key>DATABASE_URL</key>
+	<string>https://testing-c8f6a-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

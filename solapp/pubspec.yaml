@@ -39,6 +39,8 @@ dependencies:
   google_fonts: ^3.0.1
   url_launcher: ^6.1.5
   slide_to_act: ^2.0.1
+  firebase_core: ^1.22.0
+  firebase_database: ^9.1.4
  
 
 

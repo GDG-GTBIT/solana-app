@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'screens/home.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() => runApp(const MainPage());
+void main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  runApp(const MainPage());
+}
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});

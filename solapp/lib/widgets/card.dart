@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:solapp/screens/about.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'menu_button.dart';
-import 'package:glassmorphism/glassmorphism.dart';
+import '../model/nftataclass.dart';
 import 'glsom_container.dart';
 import '../screens/bid.dart';
-import 'package:flutter/material.dart';
 
 class Menu extends StatefulWidget {
   const Menu({super.key});
@@ -15,21 +14,52 @@ class Menu extends StatefulWidget {
 
 class _MenuState extends State<Menu> {
   final textController = TextEditingController();
-  List list = [
-    {'text': 'play'},
-    {'text': 'play'},
-    {'text': 'play'},
-    {'text': 'play'},
-    {'text': 'play'},
-    {'text': 'play'},
-    {'text': 'play'},
-    {'text': 'play'},
-    {'text': 'play'},
-    {'text': 'play'},
-    {'text': 'play'},
-    {'text': 'play'},
-    {'text': 'play'},
-  ];
+  late Future<List<dat>> list;
+  @override
+  void initState() {
+    super.initState();
+    list = getdat();
+  }
+
+  Future<List<dat>> getdat() async {
+    List<dat> ko = [];
+    DatabaseReference ref = FirebaseDatabase.instance.ref();
+    final getting = await ref.get();
+    final ro = getting.value as List<dynamic>;
+    ro.forEach((e) {
+      ko.add(dat(
+          compiler: e['compiler'].toString(),
+          date: e['date'].toString(),
+          description: e['description'].toString(),
+          dna: e['dna'].toString(),
+          image: e['image'].toString(),
+          edition: e['edition'].toString(),
+          name: e['name'].toString(),
+          value: e['value'].toString()));
+    });
+
+    return ko;
+  }
+
+  void p() async {
+    List<dat> ko = [];
+    DatabaseReference ref = FirebaseDatabase.instance.ref();
+    final getting = await ref.get();
+    final ro = getting.value as List<dynamic>;
+    print(ro);
+    ro.forEach((e) {
+      ko.add(dat(
+          compiler: e['compiler'].toString(),
+          date: e['date'].toString(),
+          description: e['description'].toString(),
+          dna: e['dna'].toString(),
+          image: e['image'].toString(),
+          edition: e['edition'].toString(),
+          name: e['name'].toString(),
+          value: e['value'].toString()));
+    });
+    print(ko);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +87,9 @@ class _MenuState extends State<Menu> {
               bottom: 30,
               right: 30,
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  p();
+                },
                 child: Container(
                   child: Center(
                     child: Text(
@@ -83,26 +115,45 @@ class _MenuState extends State<Menu> {
           width: double.infinity,
           color: Colors.black87,
           child: Stack(alignment: Alignment.bottomCenter, children: [
-            GridView.count(
-              padding: const EdgeInsets.all(5),
-              childAspectRatio: (75 / 100),
-              crossAxisCount: 2,
-              crossAxisSpacing: 15,
-              mainAxisSpacing: 7,
-              shrinkWrap: true,
-              children: list.map((e) {
-                return InkWell(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const BidNft(),
-                    ));
-                  },
-                  child: Container(
-                    child: const GlassContainer(),
-                  ),
-                );
-              }).toList(),
-            ),
+            FutureBuilder<List<dat>?>(
+                future: list as Future<List<dat>>,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    final meow = snapshot.data!;
+
+                    return GridView.count(
+                      padding: const EdgeInsets.all(5),
+                      childAspectRatio: (75 / 100),
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 15,
+                      mainAxisSpacing: 7,
+                      shrinkWrap: true,
+                      children: meow.map((e) {
+                        return InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const BidNft(),
+                            ));
+                          },
+                          child: GlassContainer(
+                            compiler: e.compiler,
+                            date: e.date,
+                            description: e.description,
+                            dna: e.dna,
+                            edition: e.edition,
+                            image: e.image,
+                            name: e.name,
+                            value: e.value,
+                          ),
+                        );
+                      }).toList(),
+                    );
+                  } else {
+                    return const CircularProgressIndicator(
+                      color: Colors.white60,
+                    );
+                  }
+                }),
             const Positioned(bottom: 15, child: MenuButton()),
           ]),
         ),

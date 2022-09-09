@@ -68,13 +68,13 @@ class _MenuState extends State<Menu> {
                     child: Center(
                       child: Text(
                         'ABOUT',
-                        style: TextStyle(fontSize: 15),
+                        style: TextStyle(fontSize: 25, color: Colors.white),
                       ),
                     ),
                     height: 70,
                     width: 180,
                     decoration: BoxDecoration(
-                        color: const Color.fromARGB(153, 255, 214, 64),
+                        color: Colors.black,
                         border: Border.all(color: Colors.transparent),
                         borderRadius:
                             const BorderRadius.all(Radius.circular(20))),

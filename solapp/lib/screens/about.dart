@@ -12,7 +12,7 @@ class AboutPage extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).pop();
             },
-            color: Colors.black,
+            color: Colors.white,
           ),
           backgroundColor: Colors.black,
         ),
@@ -24,7 +24,7 @@ class AboutPage extends StatelessWidget {
               child: FloatingActionButton(
                 onPressed: () {},
                 backgroundColor: Colors.black,
-                child: const Text('About'),
+                child: Icon(Icons.web),
               ),
             ),
           ],

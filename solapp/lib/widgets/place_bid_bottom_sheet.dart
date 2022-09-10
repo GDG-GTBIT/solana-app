@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:slide_to_act/slide_to_act.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PlaceBidSheet extends StatefulWidget {
   String disc;
@@ -38,13 +39,17 @@ class _PlaceBidSheetState extends State<PlaceBidSheet> {
               ),
             ),
             Container(
+              padding: EdgeInsets.all(15),
               margin: const EdgeInsets.only(top: 40),
               height: 120,
               decoration: BoxDecoration(
                 color: const Color.fromARGB(205, 255, 255, 255),
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: Text(widget.disc),
+              child: Text(
+                widget.disc,
+                style: GoogleFonts.kalam(),
+              ),
             ),
             Container(
               padding: const EdgeInsets.all(10),

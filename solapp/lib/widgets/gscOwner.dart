@@ -11,24 +11,25 @@ class Owner extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Text(
+        children: [
+          const Text(
             'OWNER',
             style: TextStyle(
               color: Colors.white70,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 2,
           ),
-          Icon(
-            Icons.eighteen_up_rating,
-            color: Colors.white70,
+          Container(
+            width: 20,
+            height: 15,
+            child: Image.asset('assets/image2.jpg'),
           ),
-          SizedBox(
+          const SizedBox(
             height: 2,
           ),
-          Text('GDSC-GTBIT',
+          const Text('GDSC-GTBIT',
               style: TextStyle(
                 fontSize: 10,
                 color: Colors.white70,

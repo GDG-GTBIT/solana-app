@@ -29,6 +29,11 @@ class AboutProject extends StatelessWidget {
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
+              Container(
+                height: 30,
+                width: 45,
+                child: Image.asset('image2.jpg'),
+              ),
               Text(
                 'About the Project',
                 style: TextStyle(

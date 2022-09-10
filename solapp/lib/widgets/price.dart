@@ -15,16 +15,18 @@ class Price extends StatelessWidget {
         Align(
           alignment: Alignment.centerLeft,
           child: Container(
-            height: 55,
+            height: 45,
             width: 40,
             alignment: Alignment.centerLeft,
             decoration: const BoxDecoration(
-                color: Colors.blueAccent,
+                color: Colors.black,
                 borderRadius: BorderRadius.all(Radius.circular(10))),
             child: const Padding(
               padding: EdgeInsets.all(3.0),
-              child:
-                  CircleAvatar(backgroundImage: AssetImage('solana_icon.png')),
+              child: CircleAvatar(
+                backgroundImage: AssetImage('solana_logo.png'),
+                backgroundColor: Colors.black,
+              ),
             ),
           ),
         ),

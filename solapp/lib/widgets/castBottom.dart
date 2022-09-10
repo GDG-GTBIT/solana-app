@@ -69,10 +69,6 @@ class Bid extends StatelessWidget {
             ),
           ],
         ),
-        // GestureDetector(
-        //   onTap: () {
-        //     // print('cool');
-        //   },
         Container(
           height: 45,
           width: 235,

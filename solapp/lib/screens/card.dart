@@ -3,11 +3,7 @@ import 'package:firebase_database/firebase_database.dart';
 import '../widgets/menu_button.dart';
 import '../model/nftataclass.dart';
 import '../widgets/glsom_container.dart';
-<<<<<<< HEAD
-import 'bid.dart';
-=======
 import '../screens/bid.dart';
->>>>>>> c056dcbf00f1b54242a287ec81f37f7c4ac24dc9
 
 class Menu extends StatefulWidget {
   const Menu({super.key});
@@ -88,27 +84,103 @@ class _MenuState extends State<Menu> {
             Positioned(
               bottom: 30,
               right: 30,
-              child: InkWell(
-                onTap: () {
-                  p();
-                },
-                child: Container(
-                  height: 50,
-                  width: 80,
-                  decoration: BoxDecoration(
-                      color: Colors.black,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    // margin: const EdgeInsets.only(top: 8),
+                    width: 60,
+                    height: 38,
+                    decoration: BoxDecoration(
                       border: Border.all(color: Colors.transparent),
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(20))),
-                  child: const Center(
-                    child: Text(
-                      'ABOUT',
-                      style: TextStyle(fontSize: 15, color: Colors.white),
+                      borderRadius: BorderRadius.circular(20),
+                      color: const Color.fromARGB(255, 247, 169, 208),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          '0.53',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          'Lorem Ipsum',
+                          style: TextStyle(
+                            fontSize: 7,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ),
+                  Column(
+                    children: <Widget>[
+                      Container(
+                        // margin: const EdgeInsets.only(top: 8),
+                        width: 60,
+                        height: 38,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.transparent),
+                          borderRadius: BorderRadius.circular(20),
+                          color: const Color.fromARGB(223, 143, 141, 143),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Text(
+                              '0.53',
+                              style: TextStyle(
+                                fontSize: 13,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              'Lorem Ipsum',
+                              style: TextStyle(
+                                fontSize: 8,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        // margin: const EdgeInsets.only(top: 8),
+                        width: 60,
+                        height: 38,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.transparent),
+                          borderRadius: BorderRadius.circular(20),
+                          color: const Color.fromARGB(255, 240, 240, 240),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Text(
+                              '0.53',
+                              style: TextStyle(
+                                fontSize: 13,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              'Lorem Ipsum',
+                              style: TextStyle(
+                                fontSize: 8,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
-            )
+            ),
           ]),
         ),
         resizeToAvoidBottomInset: false,

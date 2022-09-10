@@ -55,7 +55,7 @@ class _PlaceBidSheetState extends State<PlaceBidSheet> {
                   Icons.shopping_cart,
                   size: 20.0,
                 ),
-                text: 'Buy NFT',
+                text: '     Added to waiting list',
                 textStyle: const TextStyle(
                   color: Colors.white,
                   fontSize: 18,

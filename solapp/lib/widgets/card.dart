@@ -88,20 +88,103 @@ class _MenuState extends State<Menu> {
                 onTap: () {
                   p();
                 },
-                child: Container(
-                  height: 50,
-                  width: 80,
-                  decoration: BoxDecoration(
-                      color: Colors.black,
-                      border: Border.all(color: Colors.transparent),
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(20))),
-                  child: const Center(
-                    child: Text(
-                      'ABOUT',
-                      style: TextStyle(fontSize: 15, color: Colors.white),
+                //3 coloured boxes
+
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      // margin: const EdgeInsets.only(top: 8),
+                      width: 60,
+                      height: 38,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.transparent),
+                        borderRadius: BorderRadius.circular(20),
+                        color: const Color.fromARGB(255, 247, 169, 208),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Text(
+                            '0.53',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            'Lorem Ipsum',
+                            style: TextStyle(
+                              fontSize: 7,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
+                    Column(
+                      children: <Widget>[
+                        Container(
+                          // margin: const EdgeInsets.only(top: 8),
+                          width: 60,
+                          height: 38,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.transparent),
+                            borderRadius: BorderRadius.circular(20),
+                            color: const Color.fromARGB(223, 143, 141, 143),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Text(
+                                '0.53',
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                'Lorem Ipsum',
+                                style: TextStyle(
+                                  fontSize: 8,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          // margin: const EdgeInsets.only(top: 8),
+                          width: 60,
+                          height: 38,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.transparent),
+                            borderRadius: BorderRadius.circular(20),
+                            color: const Color.fromARGB(255, 240, 240, 240),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Text(
+                                '0.53',
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                'Lorem Ipsum',
+                                style: TextStyle(
+                                  fontSize: 8,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             )
@@ -130,14 +213,16 @@ class _MenuState extends State<Menu> {
                         return InkWell(
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => BidNft( compiler: e.compiler,
-                            date: e.date,
-                            description: e.description,
-                            dna: e.dna,
-                            edition: e.edition,
-                            image: e.image,
-                            name: e.name,
-                            value: e.value,),
+                              builder: (context) => BidNft(
+                                compiler: e.compiler,
+                                date: e.date,
+                                description: e.description,
+                                dna: e.dna,
+                                edition: e.edition,
+                                image: e.image,
+                                name: e.name,
+                                value: e.value,
+                              ),
                             ));
                           },
                           child: GlassContainer(

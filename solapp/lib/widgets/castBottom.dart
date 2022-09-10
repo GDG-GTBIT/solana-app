@@ -95,7 +95,7 @@ class Bid extends StatelessWidget {
                 innerColor: Colors.white,
                 outerColor: Colors.black,
                 sliderButtonIcon: const Icon(
-                  Icons.arrow_forward_ios,
+                  Icons.gavel_rounded,
                   size: 20.0,
                 ),
                 text: 'Place Bid',

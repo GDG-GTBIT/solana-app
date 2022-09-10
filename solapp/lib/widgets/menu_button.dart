@@ -50,7 +50,13 @@ class MenuButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(30),
             ),
           ),
-          onPressed: () => AboutProject(),
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => AboutProject(),
+              ),
+            );
+          },
           child: const Padding(
             padding: EdgeInsets.all(10),
             child: Text(

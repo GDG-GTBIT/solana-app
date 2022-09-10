@@ -219,11 +219,6 @@ class _MenuState extends State<Menu> {
                             ));
                           },
                           child: GlassContainer(
-                            compiler: e.compiler,
-                            date: e.date,
-                            description: e.description,
-                            dna: e.dna,
-                            edition: e.edition,
                             image: e.image,
                             name: e.name,
                             value: e.value,

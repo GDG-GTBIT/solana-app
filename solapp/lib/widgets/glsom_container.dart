@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class GlassContainer extends StatefulWidget {
-  String compiler;
-  String date;
-  String description;
-  String dna;
-  String image;
-  String edition;
-  String name;
-  String value;
+  final String compiler;
+  final String date;
+  final String description;
+  final String dna;
+  final String image;
+  final String edition;
+  final String name;
+  final String value;
 
-  GlassContainer({
+  const GlassContainer({
     super.key,
     required this.image,
     required this.name,
@@ -57,7 +57,7 @@ class _GlassContainerState extends State<GlassContainer> {
                 padding: const EdgeInsets.all(5),
                 child: Text(
                   widget.name,
-                  style: TextStyle(
+                  style:const TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -81,7 +81,7 @@ class _GlassContainerState extends State<GlassContainer> {
                     width: 75,
                     child: Text(
                       widget.value,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 10,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,

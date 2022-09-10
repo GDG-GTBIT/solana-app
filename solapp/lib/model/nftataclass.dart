@@ -1,4 +1,4 @@
-class dat {
+class Data {
   String compiler;
   String date;
   String description;
@@ -8,7 +8,7 @@ class dat {
   String name;
   String value;
 
-  dat({
+  Data({
     required this.compiler,
     required this.date,
     required this.description,

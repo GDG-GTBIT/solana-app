@@ -24,10 +24,10 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: App(),
       ),
-      debugShowCheckedModeBanner: false,
     );
   }
 }

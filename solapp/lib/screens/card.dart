@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import '../widgets/menu_button.dart';
@@ -39,24 +41,6 @@ class _MenuState extends State<Menu> {
     }
 
     return ko;
-  }
-
-  void p() async {
-    List<Data> ko = [];
-    DatabaseReference ref = FirebaseDatabase.instance.ref();
-    final getting = await ref.get();
-    final ro = getting.value as List<dynamic>;
-    for (var e in ro) {
-      ko.add(Data(
-          compiler: e['compiler'].toString(),
-          date: e['date'].toString(),
-          description: e['description'].toString(),
-          dna: e['dna'].toString(),
-          image: e['image'].toString(),
-          edition: e['edition'].toString(),
-          name: e['name'].toString(),
-          value: e['value'].toString()));
-    }
   }
 
   @override
@@ -193,53 +177,57 @@ class _MenuState extends State<Menu> {
         body: Container(
           height: double.infinity,
           width: double.infinity,
-          color: Colors.black87,
-          child: Stack(alignment: Alignment.bottomCenter, children: [
-            FutureBuilder<List<Data>?>(
-                future: list,
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    final meow = snapshot.data!;
+          decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage('assets/p2.jpg'))),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
+            child: Stack(alignment: Alignment.bottomCenter, children: [
+              FutureBuilder<List<Data>?>(
+                  future: list,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      final meow = snapshot.data!;
 
-                    return GridView.count(
-                      padding: const EdgeInsets.all(5),
-                      childAspectRatio: (75 / 100),
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 15,
-                      mainAxisSpacing: 7,
-                      shrinkWrap: true,
-                      children: meow.map((e) {
-                        return InkWell(
-                          onTap: () {
-                            Navigator.of(cont).push(MaterialPageRoute(
-                              builder: (cont) => BidNft(
-                                compiler: e.compiler,
-                                date: e.date,
-                                description: e.description,
-                                dna: e.dna,
-                                edition: e.edition,
-                                image: e.image,
-                                name: e.name,
-                                value: e.value,
-                              ),
-                            ));
-                          },
-                          child: GlassContainer(
-                            image: e.image,
-                            name: e.name,
-                            value: e.value,
-                          ),
-                        );
-                      }).toList(),
-                    );
-                  } else {
-                    return const CircularProgressIndicator(
-                      color: Colors.white60,
-                    );
-                  }
-                }),
-            const Positioned(bottom: 15, child: MenuButton()),
-          ]),
+                      return GridView.count(
+                        padding: const EdgeInsets.all(5),
+                        childAspectRatio: (75 / 100),
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 15,
+                        mainAxisSpacing: 7,
+                        shrinkWrap: true,
+                        children: meow.map((e) {
+                          return InkWell(
+                            onTap: () {
+                              Navigator.of(cont).push(MaterialPageRoute(
+                                builder: (cont) => BidNft(
+                                  compiler: e.compiler,
+                                  date: e.date,
+                                  description: e.description,
+                                  dna: e.dna,
+                                  edition: e.edition,
+                                  image: e.image,
+                                  name: e.name,
+                                  value: e.value,
+                                ),
+                              ));
+                            },
+                            child: GlassContainer(
+                              image: e.image,
+                              name: e.name,
+                              value: e.value,
+                            ),
+                          );
+                        }).toList(),
+                      );
+                    } else {
+                      return const CircularProgressIndicator(
+                        color: Colors.white60,
+                      );
+                    }
+                  }),
+              const Positioned(bottom: 15, child: MenuButton()),
+            ]),
+          ),
         ),
       ),
     );

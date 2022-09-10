@@ -25,15 +25,16 @@ class _GlassContainerState extends State<GlassContainer> {
         fit: BoxFit.fill,
         child: Column(
           children: [
-            FittedBox(
-              fit: BoxFit.fill,
+            SizedBox(
+              height: 200,
+              width: 190,
               child: Container(
                 alignment: Alignment.center,
                 margin: const EdgeInsets.only(top: 10),
                 decoration: BoxDecoration(
                   image: DecorationImage(image: NetworkImage(widget.image)),
                   border: Border.all(color: Colors.transparent),
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(30),
                 ),
                 height: 190,
                 width: 180,
@@ -70,9 +71,10 @@ class _GlassContainerState extends State<GlassContainer> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     height: 25,
-                    width: 75,
+                    width: 60,
                     child: Text(
                       '${widget.value}  SOL',
+                      textAlign: TextAlign.start,
                       style: const TextStyle(
                         fontSize: 10,
                         fontWeight: FontWeight.bold,

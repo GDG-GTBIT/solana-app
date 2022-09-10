@@ -41,6 +41,7 @@ dependencies:
   slide_to_act: ^2.0.1
   firebase_core: ^1.22.0
   firebase_database: ^9.1.4
+
  
 
 
@@ -76,6 +77,8 @@ flutter:
     - assets/background.jpg
     - assets/hammer.jpg
     - assets/solana_logo.png
+    - assets/
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

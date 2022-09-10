@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import '../widgets/castBottom.dart';
 
@@ -31,89 +33,102 @@ class _BidNftState extends State<BidNft> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black54,
+        leading: BackButton(color: Colors.black),
+        backgroundColor: Colors.white,
       ),
-      backgroundColor: Color.fromARGB(255, 59, 59, 59),
-      body: Stack(alignment: Alignment.bottomCenter, children: [
-        Positioned(
-            bottom: 270,
-            child: SizedBox(
-              height: 340,
-              width: 340,
-              child: Container(
-                height: 300,
-                width: 300,
-                decoration: BoxDecoration(
-                    color: Colors.transparent,
-                    image: DecorationImage(image: NetworkImage(widget.image)),
-                    borderRadius: BorderRadius.all(Radius.circular(30))),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/p2.jpg'), fit: BoxFit.fill)),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
+          child: Stack(alignment: Alignment.bottomCenter, children: [
+            Positioned(
+                bottom: 270,
+                child: SizedBox(
+                  height: 340,
+                  width: 340,
+                  child: Container(
+                    height: 300,
+                    width: 300,
+                    decoration: BoxDecoration(
+                        color: Colors.transparent,
+                        image:
+                            DecorationImage(image: NetworkImage(widget.image)),
+                        borderRadius: BorderRadius.all(Radius.circular(30))),
+                  ),
+                )),
+            SizedBox(
+              height: double.infinity,
+              width: double.infinity,
+              child: Align(
+                alignment: Alignment.topRight,
+                child: Column(
+                  children: const [
+                    SizedBox(
+                      height: 85,
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: Align(
+                          alignment: Alignment.bottomRight,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            )),
-        SizedBox(
-          height: double.infinity,
-          width: double.infinity,
-          child: Align(
-            alignment: Alignment.topRight,
-            child: Column(
-              children: const [
-                SizedBox(
-                  height: 85,
-                  child: SizedBox(
-                    width: double.infinity,
-                    child: Align(
-                      alignment: Alignment.bottomRight,
+            ),
+            SizedBox(
+              width: double.infinity,
+              height: double.infinity,
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 65,
+                  ),
+
+                  // const SizedBox(
+                  //   width: double.infinity,
+                  //   child: Align(
+                  //     alignment: Alignment.centerLeft,
+                  //     child: Icon(Icons.back_hand_outlined),
+                  //   ),
+                  // ),
+                  const SizedBox(
+                    height: 18,
+                  ),
+                  Align(
+                    heightFactor: 2,
+                    child: SizedBox(
+                      height: 25,
+                      width: 250,
+                      child: Text(
+                        '#${widget.dna}',
+                        textAlign: TextAlign.right,
+                        style: const TextStyle(
+                            fontSize: 12,
+                            fontStyle: FontStyle.italic,
+                            color: Colors.white70),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
+            Container(
+              width: 275,
+              height: 270,
+              alignment: Alignment.center,
+              child: Bid(
+                  name: widget.name,
+                  value: widget.value,
+                  disc: widget.description),
+            )
+          ]),
         ),
-        SizedBox(
-          width: double.infinity,
-          height: double.infinity,
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 65,
-              ),
-
-              // const SizedBox(
-              //   width: double.infinity,
-              //   child: Align(
-              //     alignment: Alignment.centerLeft,
-              //     child: Icon(Icons.back_hand_outlined),
-              //   ),
-              // ),
-              const SizedBox(
-                height: 18,
-              ),
-              Align(
-                heightFactor: 2,
-                child: SizedBox(
-                  height: 25,
-                  width: 250,
-                  child: Text(
-                    '#${widget.dna}',
-                    textAlign: TextAlign.right,
-                    style: const TextStyle(
-                        fontSize: 12,
-                        fontStyle: FontStyle.italic,
-                        color: Colors.white70),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-        Container(
-          width: 275,
-          height: 270,
-          alignment: Alignment.center,
-          child: Bid(
-              name: widget.name, value: widget.value, disc: widget.description),
-        )
-      ]),
+      ),
     );
   }
 }

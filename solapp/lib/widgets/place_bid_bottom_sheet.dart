@@ -21,7 +21,7 @@ class _PlaceBidSheetState extends State<PlaceBidSheet> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 500,
       child: Padding(
         padding: const EdgeInsets.all(40),
@@ -36,27 +36,27 @@ class _PlaceBidSheetState extends State<PlaceBidSheet> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 40),
+              margin: const EdgeInsets.only(top: 40),
               height: 120,
               decoration: BoxDecoration(
-                color: Color.fromARGB(205, 255, 255, 255),
+                color: const Color.fromARGB(205, 255, 255, 255),
                 borderRadius: BorderRadius.circular(20),
               ),
             ),
             Container(
-              padding: EdgeInsets.all(10),
-              margin: EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.all(10),
+              margin: const EdgeInsets.only(top: 20),
               child: SlideAction(
                 height: 40,
                 elevation: 0,
                 innerColor: Colors.white,
                 outerColor: Colors.black,
-                sliderButtonIcon: Icon(
+                sliderButtonIcon: const Icon(
                   Icons.arrow_forward_ios_rounded,
                   size: 20.0,
                 ),
                 text: 'Buy NFT',
-                textStyle: TextStyle(
+                textStyle: const TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                 ),

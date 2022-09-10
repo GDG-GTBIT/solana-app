@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'screens/home.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import './screens/bid.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

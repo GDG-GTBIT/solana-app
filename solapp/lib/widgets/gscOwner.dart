@@ -11,7 +11,7 @@ class Owner extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
-        children:const [
+        children: const [
           Text('OWNER'),
           SizedBox(
             height: 2,
@@ -20,7 +20,7 @@ class Owner extends StatelessWidget {
           SizedBox(
             height: 2,
           ),
-          Text('name'),
+          Text('GDSC-GTBIT'),
         ],
       ),
     );

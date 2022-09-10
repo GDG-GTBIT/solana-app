@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'menu_button.dart';
+import '../widgets/menu_button.dart';
 import '../model/nftataclass.dart';
-import 'glsom_container.dart';
+import '../widgets/glsom_container.dart';
 import '../screens/bid.dart';
 
 class Menu extends StatefulWidget {
@@ -60,7 +60,7 @@ class _MenuState extends State<Menu> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext cont) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -129,8 +129,17 @@ class _MenuState extends State<Menu> {
                       children: meow.map((e) {
                         return InkWell(
                           onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => const BidNft(),
+                            Navigator.of(cont).push(MaterialPageRoute(
+                              builder: (cont) => BidNft(
+                                compiler: e.compiler,
+                                date: e.date,
+                                description: e.description,
+                                dna: e.dna,
+                                edition: e.edition,
+                                image: e.image,
+                                name: e.name,
+                                value: e.value,
+                              ),
                             ));
                           },
                           child: GlassContainer(

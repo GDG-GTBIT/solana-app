@@ -30,19 +30,23 @@ class _BidNftState extends State<BidNft> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      backgroundColor: const Color.fromARGB(111, 255, 255, 255),
+      appBar: AppBar(
+        backgroundColor: Colors.black54,
+      ),
+      backgroundColor: Colors.black54,
       body: Stack(alignment: Alignment.bottomCenter, children: [
         Positioned(
-          bottom: 250,
-          child: Container(
-            height: 400,
-            width: 320,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-              image: NetworkImage(widget.image),
-            )),
-          ),
+          bottom: 300,
+          child: SizedBox(
+              height: 300,
+              width: 300,
+              child: Container(
+                height: 200,
+                decoration: BoxDecoration(
+                    color: Colors.amberAccent,
+                    image: DecorationImage(image: NetworkImage(widget.image)),
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+              )),
         ),
         SizedBox(
           height: double.infinity,
@@ -57,7 +61,6 @@ class _BidNftState extends State<BidNft> {
                     width: double.infinity,
                     child: Align(
                       alignment: Alignment.bottomRight,
-                      child: Icon(Icons.account_balance_wallet_outlined),
                     ),
                   ),
                 ),
@@ -73,15 +76,7 @@ class _BidNftState extends State<BidNft> {
               const SizedBox(
                 height: 65,
               ),
-              Container(
-                alignment: Alignment.topLeft,
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: const Icon(Icons.arrow_back),
-                ),
-              ),
+
               // const SizedBox(
               //   width: double.infinity,
               //   child: Align(
@@ -92,13 +87,16 @@ class _BidNftState extends State<BidNft> {
               const SizedBox(
                 height: 25,
               ),
-              SizedBox(
-                height: 25,
-                width: 250,
-                child: Text(
-                  widget.dna,
-                  textAlign: TextAlign.right,
-                  style: const TextStyle(fontSize: 10),
+              Align(
+                heightFactor: 3,
+                child: SizedBox(
+                  height: 25,
+                  width: 250,
+                  child: Text(
+                    widget.dna,
+                    textAlign: TextAlign.right,
+                    style: const TextStyle(fontSize: 10),
+                  ),
                 ),
               ),
             ],

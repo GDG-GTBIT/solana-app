@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'menu_button.dart';
+import '../widgets/menu_button.dart';
 import '../model/nftataclass.dart';
-import 'glsom_container.dart';
-import '../screens/bid.dart';
+import '../widgets/glsom_container.dart';
+import 'bid.dart';
 
 class Menu extends StatefulWidget {
   const Menu({super.key});

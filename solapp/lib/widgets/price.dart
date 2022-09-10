@@ -36,6 +36,7 @@ class Price extends StatelessWidget {
           child: Text(
             value,
             style: const TextStyle(
+              color: Colors.white70,
               fontWeight: FontWeight.bold,
               fontSize: 20,
             ),
@@ -47,7 +48,8 @@ class Price extends StatelessWidget {
             name,
             textAlign: TextAlign.left,
             style: const TextStyle(
-              fontWeight: FontWeight.w200,
+              color: Colors.white70,
+              fontWeight: FontWeight.w500,
               fontSize: 15,
             ),
           ),

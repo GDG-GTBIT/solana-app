@@ -53,9 +53,6 @@ class Bid extends StatelessWidget {
             ),
             Column(
               children: [
-                const SizedBox(
-                  height: 67,
-                ),
                 Container(
                   height: 85,
                   width: 100,

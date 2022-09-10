@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:slide_to_act/slide_to_act.dart';
+<<<<<<< HEAD
 import 'card.dart';
+=======
+import '../screens/card.dart';
+>>>>>>> c056dcbf00f1b54242a287ec81f37f7c4ac24dc9
 
 void main() {
   runApp(const App());

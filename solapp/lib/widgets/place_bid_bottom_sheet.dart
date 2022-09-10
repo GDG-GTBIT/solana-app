@@ -52,7 +52,7 @@ class _PlaceBidSheetState extends State<PlaceBidSheet> {
                 innerColor: Colors.white,
                 outerColor: Colors.black,
                 sliderButtonIcon: const Icon(
-                  Icons.arrow_forward_ios_rounded,
+                  Icons.shopping_cart,
                   size: 20.0,
                 ),
                 text: 'Buy NFT',

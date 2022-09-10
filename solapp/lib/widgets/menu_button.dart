@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'menu.dart';
+=======
+import '../widgets/menu.dart';
+>>>>>>> c056dcbf00f1b54242a287ec81f37f7c4ac24dc9
 import '../screens/about.dart';
 
 class MenuButton extends StatelessWidget {
@@ -50,7 +54,13 @@ class MenuButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(30),
             ),
           ),
-          onPressed: () => AboutProject(),
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => AboutProject(),
+              ),
+            );
+          },
           child: const Padding(
             padding: EdgeInsets.all(10),
             child: Text(

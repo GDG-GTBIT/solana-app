@@ -71,9 +71,10 @@ class _GlassContainerState extends State<GlassContainer> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     height: 25,
-                    width: 75,
+                    width: 60,
                     child: Text(
                       '${widget.value}  SOL',
+                      textAlign: TextAlign.start,
                       style: const TextStyle(
                         fontSize: 10,
                         fontWeight: FontWeight.bold,

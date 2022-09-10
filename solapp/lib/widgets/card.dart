@@ -46,7 +46,6 @@ class _MenuState extends State<Menu> {
     DatabaseReference ref = FirebaseDatabase.instance.ref();
     final getting = await ref.get();
     final ro = getting.value as List<dynamic>;
-    print(ro);
     for (var e in ro) {
       ko.add(Data(
           compiler: e['compiler'].toString(),
@@ -58,7 +57,6 @@ class _MenuState extends State<Menu> {
           name: e['name'].toString(),
           value: e['value'].toString()));
     }
-    print(ko);
   }
 
   @override

@@ -3,7 +3,7 @@ import 'package:slide_to_act/slide_to_act.dart';
 import '../widgets/card.dart';
 
 void main() {
-  runApp(App());
+  runApp(const App());
 }
 
 class App extends StatelessWidget {
@@ -13,123 +13,121 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Container(
-          child: Stack(
-            alignment: Alignment.bottomCenter,
-            children: [
-              Container(
-                height: double.infinity,
+        body: Stack(
+          alignment: Alignment.bottomCenter,
+          children: [
+            Container(
+              height: double.infinity,
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                color: Colors.transparent,
+                image: DecorationImage(
+                    image: AssetImage(
+                      'background.jpg',
+                    ),
+                    fit: BoxFit.fill),
+              ),
+            ),
+            Positioned(
+              child: Container(
+                height: 450,
                 width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  image: DecorationImage(
-                      image: AssetImage(
-                        'background.jpg',
-                      ),
-                      fit: BoxFit.fill),
-                ),
-              ),
-              Positioned(
-                child: Container(
-                  height: 450,
-                  width: double.infinity,
-                  alignment: Alignment.bottomCenter,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        Color.fromARGB(255, 255, 255, 255),
-                        Color.fromARGB(230, 255, 255, 255),
-                        Color.fromARGB(180, 255, 255, 255),
-                        Color.fromARGB(0, 255, 255, 255)
-                      ],
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
-                    ),
-                  ),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 120.0,
-                        width: 150.0,
-                      ),
-                      Container(
-                        alignment: Alignment.bottomCenter,
-                        width: double.infinity,
-                        child: Center(
-                          child: Text(
-                            textAlign: TextAlign.center,
-                            'Discover NFT Collections',
-                            style: TextStyle(
-                              fontSize: 40.0,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 20.0,
-                        width: 15.0,
-                      ),
-                      Container(
-                        width: 300,
-                        child: Center(
-                          child: Text(
-                            textAlign: TextAlign.center,
-                            'Explore the top collections of NFTs and buy and sell your NFTs as well',
-                            style: TextStyle(
-                              fontFamily: 'Montserrat',
-                              fontSize: 15.0,
-                              color: Colors.black87,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
+                alignment: Alignment.bottomCenter,
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Color.fromARGB(255, 255, 255, 255),
+                      Color.fromARGB(230, 255, 255, 255),
+                      Color.fromARGB(180, 255, 255, 255),
+                      Color.fromARGB(0, 255, 255, 255)
                     ],
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 10.0,
-                width: 10.0,
-              ),
-              Positioned(
-                child: Container(
-                  alignment: Alignment.bottomCenter,
-                  margin: const EdgeInsets.all(30),
-                  height: 65,
-                  width: 290,
-                  child: SlideAction(
-                    elevation: 0,
-                    innerColor: Colors.white,
-                    outerColor: Colors.black,
-                    sliderButtonIcon: Icon(
-                      Icons.arrow_forward_ios_rounded,
-                      size: 25.0,
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 120.0,
+                      width: 150.0,
                     ),
-                    text: 'Start Experience',
-                    textStyle: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                    ),
-                    onSubmit: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const Menu(),
+                    Container(
+                      alignment: Alignment.bottomCenter,
+                      width: double.infinity,
+                      child: const Center(
+                        child: Text(
+                          textAlign: TextAlign.center,
+                          'Discover NFT Collections',
+                          style: TextStyle(
+                            fontSize: 40.0,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      );
-                    },
-                    sliderRotate: false,
-                  ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20.0,
+                      width: 15.0,
+                    ),
+                    const SizedBox(
+                      width: 300,
+                      child: Center(
+                        child: Text(
+                          textAlign: TextAlign.center,
+                          'Explore the top collections of NFTs and buy and sell your NFTs as well',
+                          style: TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontSize: 15.0,
+                            color: Colors.black87,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              const SizedBox(
-                height: 10.0,
-                width: 10.0,
-              )
-            ],
-          ),
+            ),
+            const SizedBox(
+              height: 10.0,
+              width: 10.0,
+            ),
+            Positioned(
+              child: Container(
+                alignment: Alignment.bottomCenter,
+                margin: const EdgeInsets.all(30),
+                height: 65,
+                width: 290,
+                child: SlideAction(
+                  elevation: 0,
+                  innerColor: Colors.white,
+                  outerColor: Colors.black,
+                  sliderButtonIcon: const Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    size: 25.0,
+                  ),
+                  text: 'Start Experience',
+                  textStyle: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                  ),
+                  onSubmit: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const Menu(),
+                      ),
+                    );
+                  },
+                  sliderRotate: false,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10.0,
+              width: 10.0,
+            )
+          ],
         ),
       ),
     );

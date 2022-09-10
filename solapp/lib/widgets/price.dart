@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Price extends StatelessWidget {
-  String value;
-  String name;
-  Price({super.key, required this.name, required this.value});
+  final String value;
+  final String name;
+  const Price({super.key, required this.name, required this.value});
 
   @override
   Widget build(BuildContext context) {
@@ -15,17 +15,17 @@ class Price extends StatelessWidget {
         Align(
           alignment: Alignment.centerLeft,
           child: Container(
-            child: Padding(
-              padding: const EdgeInsets.all(3.0),
-              child:
-                  CircleAvatar(backgroundImage: AssetImage('solana_icon.png')),
-            ),
             height: 55,
             width: 40,
             alignment: Alignment.centerLeft,
             decoration: const BoxDecoration(
                 color: Colors.blueAccent,
                 borderRadius: BorderRadius.all(Radius.circular(10))),
+            child: const Padding(
+              padding: EdgeInsets.all(3.0),
+              child:
+                  CircleAvatar(backgroundImage: AssetImage('solana_icon.png')),
+            ),
           ),
         ),
         const SizedBox(
@@ -35,7 +35,7 @@ class Price extends StatelessWidget {
           alignment: Alignment.centerLeft,
           child: Text(
             value,
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20,
             ),
@@ -46,7 +46,7 @@ class Price extends StatelessWidget {
           child: Text(
             name,
             textAlign: TextAlign.left,
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.w200,
               fontSize: 15,
             ),

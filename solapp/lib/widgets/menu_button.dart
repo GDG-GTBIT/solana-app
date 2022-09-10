@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../screens/menu.dart';
+import '../screens/about.dart';
 
 class MenuButton extends StatelessWidget {
   const MenuButton({super.key});
@@ -21,21 +22,44 @@ class MenuButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: const Color.fromARGB(234, 255, 255, 255),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30),
+    return Row(
+      children: [
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color.fromARGB(234, 255, 255, 255),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+            ),
+          ),
+          onPressed: () => openBottomSheet(context),
+          child: const Padding(
+            padding: EdgeInsets.all(10),
+            child: Text(
+              'Menu',
+              style: TextStyle(fontSize: 14, color: Colors.black),
+            ),
+          ),
         ),
-      ),
-      onPressed: () => openBottomSheet(context),
-      child: const Padding(
-        padding: EdgeInsets.all(10),
-        child: Text(
-          'Menu',
-          style: TextStyle(fontSize: 14, color: Colors.black),
+        const SizedBox(
+          width: 30,
         ),
-      ),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color.fromARGB(234, 255, 255, 255),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+            ),
+          ),
+          onPressed: () => AboutProject(),
+          child: const Padding(
+            padding: EdgeInsets.all(10),
+            child: Text(
+              'About Project',
+              style: TextStyle(fontSize: 14, color: Colors.black),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

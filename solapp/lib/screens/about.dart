@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class AboutPage extends StatelessWidget {
-  AboutPage({super.key});
+class AboutProject extends StatelessWidget {
+  AboutProject({super.key});
   final Uri _url = Uri.parse(
       'https://gdsc.community.dev/guru-tegh-bahadur-institute-of-technology-delhi/');
 
@@ -21,24 +21,8 @@ class AboutPage extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).pop();
             },
-            color: Colors.white,
           ),
           backgroundColor: Colors.black,
-        ),
-        body: Stack(
-          children: [
-            ListView(),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: FloatingActionButton(
-                onPressed: () {
-                  _launchUrl();
-                },
-                backgroundColor: Colors.black,
-                child: Image.asset('image2.jpg'),
-              ),
-            ),
-          ],
         ),
       ),
     );

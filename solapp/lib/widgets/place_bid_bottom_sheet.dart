@@ -3,7 +3,9 @@ import 'package:slide_to_act/slide_to_act.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PlaceBidSheet extends StatefulWidget {
-  const PlaceBidSheet({super.key});
+  String disc;
+
+  PlaceBidSheet({super.key, required this.disc});
 
   @override
   State<PlaceBidSheet> createState() => _PlaceBidSheetState();
@@ -42,6 +44,7 @@ class _PlaceBidSheetState extends State<PlaceBidSheet> {
                 color: const Color.fromARGB(205, 255, 255, 255),
                 borderRadius: BorderRadius.circular(20),
               ),
+              child: Text(widget.disc),
             ),
             Container(
               padding: const EdgeInsets.all(10),

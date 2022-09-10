@@ -8,8 +8,10 @@ import './place_bid_bottom_sheet.dart';
 
 class Bid extends StatelessWidget {
   final String value;
+  final String disc;
   final String name;
-  const Bid({super.key, required this.name, required this.value});
+  const Bid(
+      {super.key, required this.name, required this.value, required this.disc});
 
   void openBottomSheet(BuildContext ctx) {
     showModalBottomSheet(
@@ -19,10 +21,12 @@ class Bid extends StatelessWidget {
           top: Radius.circular(40),
         ),
       ),
-      backgroundColor: const Color.fromARGB(141, 255, 255, 255),
+      backgroundColor: const Color.fromARGB(0, 255, 255, 255),
       context: ctx,
       builder: (ctx) {
-        return const PlaceBidSheet();
+        return PlaceBidSheet(
+          disc: disc,
+        );
       },
     );
   }
@@ -74,9 +78,9 @@ class Bid extends StatelessWidget {
         //     // print('cool');
         //   },
         Container(
-          height: 45,
-          width: 235,
-          margin: const EdgeInsets.all(15),
+          height: 55,
+          width: 220,
+          margin: const EdgeInsets.all(10),
           // decoration: const BoxDecoration(
           //   color: Color.fromARGB(255, 255, 255, 255),
           //   borderRadius: BorderRadius.all(Radius.circular(25)),
@@ -93,7 +97,7 @@ class Bid extends StatelessWidget {
                 outerColor: Colors.black,
                 sliderButtonIcon: const Icon(
                   Icons.gavel_rounded,
-                  size: 20.0,
+                  size: 17,
                 ),
                 text: 'Place Bid',
                 textStyle: const TextStyle(

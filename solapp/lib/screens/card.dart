@@ -3,11 +3,7 @@ import 'package:firebase_database/firebase_database.dart';
 import '../widgets/menu_button.dart';
 import '../model/nftataclass.dart';
 import '../widgets/glsom_container.dart';
-<<<<<<< HEAD
-import 'bid.dart';
-=======
 import '../screens/bid.dart';
->>>>>>> c056dcbf00f1b54242a287ec81f37f7c4ac24dc9
 
 class Menu extends StatefulWidget {
   const Menu({super.key});
@@ -147,11 +143,6 @@ class _MenuState extends State<Menu> {
                             ));
                           },
                           child: GlassContainer(
-                            compiler: e.compiler,
-                            date: e.date,
-                            description: e.description,
-                            dna: e.dna,
-                            edition: e.edition,
                             image: e.image,
                             name: e.name,
                             value: e.value,

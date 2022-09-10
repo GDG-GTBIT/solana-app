@@ -33,21 +33,22 @@ class _BidNftState extends State<BidNft> {
       appBar: AppBar(
         backgroundColor: Colors.black54,
       ),
-      backgroundColor: Colors.black54,
+      backgroundColor: Color.fromARGB(255, 59, 59, 59),
       body: Stack(alignment: Alignment.bottomCenter, children: [
         Positioned(
-          bottom: 300,
-          child: SizedBox(
-              height: 300,
-              width: 300,
+            bottom: 270,
+            child: SizedBox(
+              height: 340,
+              width: 340,
               child: Container(
-                height: 200,
+                height: 300,
+                width: 300,
                 decoration: BoxDecoration(
-                    color: Colors.amberAccent,
+                    color: Colors.transparent,
                     image: DecorationImage(image: NetworkImage(widget.image)),
-                    borderRadius: BorderRadius.all(Radius.circular(20))),
-              )),
-        ),
+                    borderRadius: BorderRadius.all(Radius.circular(30))),
+              ),
+            )),
         SizedBox(
           height: double.infinity,
           width: double.infinity,
@@ -85,17 +86,20 @@ class _BidNftState extends State<BidNft> {
               //   ),
               // ),
               const SizedBox(
-                height: 25,
+                height: 18,
               ),
               Align(
-                heightFactor: 3,
+                heightFactor: 2,
                 child: SizedBox(
                   height: 25,
                   width: 250,
                   child: Text(
-                    widget.dna,
+                    '#${widget.dna}',
                     textAlign: TextAlign.right,
-                    style: const TextStyle(fontSize: 10),
+                    style: const TextStyle(
+                        fontSize: 12,
+                        fontStyle: FontStyle.italic,
+                        color: Colors.white70),
                   ),
                 ),
               ),
@@ -106,7 +110,8 @@ class _BidNftState extends State<BidNft> {
           width: 275,
           height: 270,
           alignment: Alignment.center,
-          child: Bid(name: widget.name, value: widget.value),
+          child: Bid(
+              name: widget.name, value: widget.value, disc: widget.description),
         )
       ]),
     );

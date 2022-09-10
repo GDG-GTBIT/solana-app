@@ -32,7 +32,7 @@ class AboutProject extends StatelessWidget {
               Container(
                 height: 30,
                 width: 45,
-                child: Image.asset('image2.jpg'),
+                child: Image.asset('assets/image2.jpg'),
               ),
               Text(
                 'About the Project',

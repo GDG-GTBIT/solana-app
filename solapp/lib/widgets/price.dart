@@ -24,7 +24,7 @@ class Price extends StatelessWidget {
             child: const Padding(
               padding: EdgeInsets.all(3.0),
               child: CircleAvatar(
-                backgroundImage: AssetImage('solana_logo.png'),
+                backgroundImage: AssetImage('assets/solana_logo.png'),
                 backgroundColor: Colors.black,
               ),
             ),

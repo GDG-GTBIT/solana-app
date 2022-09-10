@@ -14,20 +14,20 @@ class Menu extends StatefulWidget {
 
 class _MenuState extends State<Menu> {
   final textController = TextEditingController();
-  late Future<List<dat>> list;
+  late Future<List<Data>> list;
   @override
   void initState() {
     super.initState();
     list = getdat();
   }
 
-  Future<List<dat>> getdat() async {
-    List<dat> ko = [];
+  Future<List<Data>> getdat() async {
+    List<Data> ko = [];
     DatabaseReference ref = FirebaseDatabase.instance.ref();
     final getting = await ref.get();
     final ro = getting.value as List<dynamic>;
-    ro.forEach((e) {
-      ko.add(dat(
+    for (var e in ro) {
+      ko.add(Data(
           compiler: e['compiler'].toString(),
           date: e['date'].toString(),
           description: e['description'].toString(),
@@ -36,19 +36,19 @@ class _MenuState extends State<Menu> {
           edition: e['edition'].toString(),
           name: e['name'].toString(),
           value: e['value'].toString()));
-    });
+    }
 
     return ko;
   }
 
   void p() async {
-    List<dat> ko = [];
+    List<Data> ko = [];
     DatabaseReference ref = FirebaseDatabase.instance.ref();
     final getting = await ref.get();
     final ro = getting.value as List<dynamic>;
     print(ro);
-    ro.forEach((e) {
-      ko.add(dat(
+    for (var e in ro) {
+      ko.add(Data(
           compiler: e['compiler'].toString(),
           date: e['date'].toString(),
           description: e['description'].toString(),
@@ -57,7 +57,7 @@ class _MenuState extends State<Menu> {
           edition: e['edition'].toString(),
           name: e['name'].toString(),
           value: e['value'].toString()));
-    });
+    }
     print(ko);
   }
 
@@ -91,12 +91,6 @@ class _MenuState extends State<Menu> {
                   p();
                 },
                 child: Container(
-                  child: Center(
-                    child: Text(
-                      'ABOUT',
-                      style: TextStyle(fontSize: 15, color: Colors.white),
-                    ),
-                  ),
                   height: 50,
                   width: 80,
                   decoration: BoxDecoration(
@@ -104,6 +98,12 @@ class _MenuState extends State<Menu> {
                       border: Border.all(color: Colors.transparent),
                       borderRadius:
                           const BorderRadius.all(Radius.circular(20))),
+                  child: const Center(
+                    child: Text(
+                      'ABOUT',
+                      style: TextStyle(fontSize: 15, color: Colors.white),
+                    ),
+                  ),
                 ),
               ),
             )
@@ -115,8 +115,8 @@ class _MenuState extends State<Menu> {
           width: double.infinity,
           color: Colors.black87,
           child: Stack(alignment: Alignment.bottomCenter, children: [
-            FutureBuilder<List<dat>?>(
-                future: list as Future<List<dat>>,
+            FutureBuilder<List<Data>?>(
+                future: list,
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     final meow = snapshot.data!;

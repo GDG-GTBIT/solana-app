@@ -90,7 +90,7 @@ class _MenuState extends State<Menu> {
                   Container(
                     // margin: const EdgeInsets.only(top: 8),
                     width: 60,
-                    height: 38,
+                    height: 78,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.transparent),
                       borderRadius: BorderRadius.circular(20),
@@ -115,6 +115,9 @@ class _MenuState extends State<Menu> {
                         ),
                       ],
                     ),
+                  ),
+                  SizedBox(
+                    width: 5,
                   ),
                   Column(
                     children: <Widget>[
@@ -146,6 +149,9 @@ class _MenuState extends State<Menu> {
                             ),
                           ],
                         ),
+                      ),
+                      SizedBox(
+                        height: 5,
                       ),
                       Container(
                         // margin: const EdgeInsets.only(top: 8),

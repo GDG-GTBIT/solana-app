@@ -25,8 +25,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: Scaffold(
-        body: BidNft(),
-        //App(),
+        body: App(),
       ),
       debugShowCheckedModeBanner: false,
     );

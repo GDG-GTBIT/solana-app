@@ -64,29 +64,6 @@ class _PlaceBidSheetState extends State<PlaceBidSheet> {
                 sliderRotate: false,
               ),
             ),
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      _launchUrl();
-                    },
-                    child: Text(
-                      'About GDSC',
-                      style: TextStyle(
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    child: Image.asset('image2.jpg'),
-                    height: 5,
-                    width: 3,
-                  ),
-                ],
-              ),
-            ),
           ],
         ),
       ),

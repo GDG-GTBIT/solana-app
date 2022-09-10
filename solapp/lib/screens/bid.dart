@@ -72,48 +72,6 @@ class _BidNftState extends State<BidNft> {
                     textAlign: TextAlign.right,
                   ),
                 ),
-                Container(
-                  margin: const EdgeInsets.only(left: 10),
-                  alignment: Alignment.centerLeft,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const SizedBox(
-                        height: 120,
-                      ),
-                      Container(
-                        height: 45,
-                        width: 35,
-                        decoration: const BoxDecoration(
-                          color: Colors.lightBlueAccent,
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Container(
-                        height: 45,
-                        width: 35,
-                        decoration: const BoxDecoration(
-                          color: Colors.lightBlueAccent,
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Container(
-                        height: 45,
-                        width: 35,
-                        decoration: const BoxDecoration(
-                          color: Colors.lightBlueAccent,
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                      ),
-                    ],
-                  ),
-                )
               ],
             ),
           ),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Price extends StatelessWidget {
-  const Price({super.key});
+  String value;
+  String name;
+  Price({super.key, required this.name, required this.value});
 
   @override
   Widget build(BuildContext context) {
@@ -29,20 +31,20 @@ class Price extends StatelessWidget {
         const SizedBox(
           height: 4,
         ),
-        const Align(
+        Align(
           alignment: Alignment.centerLeft,
           child: Text(
-            '0.56',
+            value,
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20,
             ),
           ),
         ),
-        const Align(
+        Align(
           alignment: Alignment.centerLeft,
           child: Text(
-            'Loren ipsum',
+            name,
             textAlign: TextAlign.left,
             style: TextStyle(
               fontWeight: FontWeight.w200,

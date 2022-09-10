@@ -5,7 +5,9 @@ import 'gscOwner.dart';
 import 'price.dart';
 
 class Bid extends StatelessWidget {
-  const Bid({super.key});
+  String value;
+  String name;
+  Bid({super.key, required this.name, required this.value});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class Bid extends StatelessWidget {
                 color: Colors.black38,
                 borderRadius: BorderRadius.all(Radius.circular(20)),
               ),
-              child: const Price(),
+              child: Price(name: name, value: value),
             ),
             Column(
               children: [
@@ -39,14 +41,14 @@ class Bid extends StatelessWidget {
                 Container(
                   height: 85,
                   width: 100,
-                  padding:const EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
                   alignment: Alignment.bottomLeft,
                   margin: const EdgeInsets.all(15),
                   decoration: const BoxDecoration(
                     color: Colors.black38,
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                   ),
-                  child:const Owner(),
+                  child: const Owner(),
                 ),
               ],
             ),

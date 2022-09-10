@@ -1,8 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:solapp/screens/home.dart';
 import '../widgets/castBottom.dart';
 
 class BidNft extends StatefulWidget {
-  const BidNft({super.key});
+  String compiler;
+  String date;
+  String description;
+  String dna;
+  String image;
+  String edition;
+  String name;
+  String value;
+  BidNft({
+    super.key,
+    required this.image,
+    required this.name,
+    required this.value,
+    required this.compiler,
+    required this.date,
+    required this.description,
+    required this.dna,
+    required this.edition,
+  });
 
   @override
   State<BidNft> createState() => _BidNftState();
@@ -12,10 +31,21 @@ class _BidNftState extends State<BidNft> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black45,
       child: Scaffold(
-        backgroundColor: const Color.fromARGB(155, 255, 255, 255),
+        appBar: AppBar(),
+        backgroundColor: Color.fromARGB(111, 255, 255, 255),
         body: Stack(alignment: Alignment.bottomCenter, children: [
+          Positioned(
+            bottom: 250,
+            child: Container(
+              height: 400,
+              width: 320,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                image: NetworkImage(widget.image),
+              )),
+            ),
+          ),
           SizedBox(
             height: double.infinity,
             width: double.infinity,
@@ -64,56 +94,15 @@ class _BidNftState extends State<BidNft> {
                 const SizedBox(
                   height: 25,
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 25,
                   width: 250,
                   child: Text(
-                    'loren #ipsum',
+                    widget.dna,
                     textAlign: TextAlign.right,
+                    style: TextStyle(fontSize: 10),
                   ),
                 ),
-                Container(
-                  margin: const EdgeInsets.only(left: 10),
-                  alignment: Alignment.centerLeft,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const SizedBox(
-                        height: 120,
-                      ),
-                      Container(
-                        height: 45,
-                        width: 35,
-                        decoration: const BoxDecoration(
-                          color: Colors.lightBlueAccent,
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Container(
-                        height: 45,
-                        width: 35,
-                        decoration: const BoxDecoration(
-                          color: Colors.lightBlueAccent,
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Container(
-                        height: 45,
-                        width: 35,
-                        decoration: const BoxDecoration(
-                          color: Colors.lightBlueAccent,
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
-                        ),
-                      ),
-                    ],
-                  ),
-                )
               ],
             ),
           ),
@@ -121,7 +110,7 @@ class _BidNftState extends State<BidNft> {
             width: 275,
             height: 270,
             alignment: Alignment.center,
-            child: const Bid(),
+            child: Bid(name: widget.name, value: widget.value),
           )
         ]),
       ),

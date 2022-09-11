@@ -31,25 +31,6 @@ class MenuButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(30),
             ),
           ),
-          onPressed: () => openBottomSheet(context),
-          child: const Padding(
-            padding: EdgeInsets.all(10),
-            child: Text(
-              'Menu',
-              style: TextStyle(fontSize: 14, color: Colors.black),
-            ),
-          ),
-        ),
-        const SizedBox(
-          width: 30,
-        ),
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: const Color.fromARGB(234, 255, 255, 255),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30),
-            ),
-          ),
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(

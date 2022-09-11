@@ -29,15 +29,8 @@ class _PlaceBidSheetState extends State<PlaceBidSheet> {
       child: Padding(
         padding: const EdgeInsets.all(40),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              height: 100,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(color: Colors.transparent),
-                borderRadius: BorderRadius.circular(20),
-              ),
-            ),
             Container(
               padding: EdgeInsets.all(15),
               margin: const EdgeInsets.only(top: 40),

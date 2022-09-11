@@ -4,17 +4,16 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PlaceBidSheet extends StatefulWidget {
-  String disc;
+  final String disc;
 
-  PlaceBidSheet({super.key, required this.disc});
+  const PlaceBidSheet({super.key, required this.disc});
 
   @override
   State<PlaceBidSheet> createState() => _PlaceBidSheetState();
 }
 
 class _PlaceBidSheetState extends State<PlaceBidSheet> {
-  final Uri _url = Uri.parse(
-      'https://gdsc.community.dev/guru-tegh-bahadur-institute-of-technology-delhi/');
+  final Uri _url = Uri.parse('https://hackerhouse-gdsc-gtbit.netlify.app/');
 
   Future<void> _launchUrl() async {
     if (!await launchUrl(_url)) {
@@ -29,27 +28,22 @@ class _PlaceBidSheetState extends State<PlaceBidSheet> {
       child: Padding(
         padding: const EdgeInsets.all(40),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              height: 100,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(color: Colors.transparent),
-                borderRadius: BorderRadius.circular(20),
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.all(15),
+              padding: EdgeInsets.all(5),
               margin: const EdgeInsets.only(top: 40),
               height: 120,
               decoration: BoxDecoration(
                 color: const Color.fromARGB(205, 255, 255, 255),
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: Text(
-                widget.disc,
-                style: GoogleFonts.kalam(),
-              ),
+              child: ListView(children: [
+                Text(
+                  widget.disc,
+                  style: GoogleFonts.kalam(),
+                ),
+              ]),
             ),
             Container(
               padding: const EdgeInsets.all(10),

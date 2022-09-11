@@ -21,7 +21,7 @@ class Owner extends StatelessWidget {
           const SizedBox(
             height: 2,
           ),
-          Container(
+          SizedBox(
             width: 20,
             height: 15,
             child: Image.asset('assets/image2.jpg'),

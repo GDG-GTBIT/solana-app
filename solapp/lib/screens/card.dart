@@ -2,10 +2,10 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
-import '../widgets/menu_button.dart';
 import '../model/nftataclass.dart';
 import '../widgets/glsom_container.dart';
 import '../screens/bid.dart';
+import '../widgets/menu_button.dart';
 
 class Menu extends StatefulWidget {
   const Menu({super.key});
@@ -101,7 +101,7 @@ class _MenuState extends State<Menu> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
                   Column(
@@ -135,7 +135,7 @@ class _MenuState extends State<Menu> {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Container(
@@ -178,12 +178,15 @@ class _MenuState extends State<Menu> {
         body: Container(
           height: double.infinity,
           width: double.infinity,
-          decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage('assets/p2.jpg'))),
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/p2.jpg'), fit: BoxFit.fill)),
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-            child: Stack(alignment: Alignment.bottomCenter, children: [
-              FutureBuilder<List<Data>?>(
+            child: Stack(
+              alignment: Alignment.bottomCenter,
+              children: [
+                FutureBuilder<List<Data>?>(
                   future: list,
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
@@ -227,8 +230,11 @@ class _MenuState extends State<Menu> {
                         ),
                       );
                     }
-                  }),
-            ]),
+                  },
+                ),
+                Positioned(bottom: 15, child: MenuButton()),
+              ],
+            ),
           ),
         ),
       ),

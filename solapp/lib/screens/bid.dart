@@ -33,19 +33,24 @@ class _BidNftState extends State<BidNft> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: BackButton(color: Colors.black),
+        leading: const BackButton(color: Colors.black),
         centerTitle: true,
         elevation: 5,
         title: Text(
           widget.name,
-          style: GoogleFonts.montserratSubrayada(),
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+            fontStyle: FontStyle.normal,
+            fontSize: 18,
+          ),
         ),
         backgroundColor: Colors.white,
       ),
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage('assets/p2.jpg'), fit: BoxFit.fill)),
         child: BackdropFilter(
@@ -63,7 +68,8 @@ class _BidNftState extends State<BidNft> {
                         color: Colors.transparent,
                         image:
                             DecorationImage(image: NetworkImage(widget.image)),
-                        borderRadius: BorderRadius.all(Radius.circular(30))),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(30))),
                   ),
                 )),
             SizedBox(

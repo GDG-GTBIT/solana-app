@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutProject extends StatelessWidget {
   AboutProject({super.key});
@@ -65,11 +66,23 @@ class AboutProject extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.white,
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
               ),
+              SizedBox(
+                height: 15,
+              ),
+              TextButton(
+                  onPressed: () {
+                    _launchUrl();
+                  },
+                  child: Text(
+                    'About GDSC',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.white),
+                  ))
             ],
           ),
         ),

@@ -180,8 +180,10 @@ class _MenuState extends State<Menu> {
               image: DecorationImage(image: AssetImage('assets/p2.jpg'))),
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-            child: Stack(alignment: Alignment.bottomCenter, children: [
-              FutureBuilder<List<Data>?>(
+            child: Stack(
+              alignment: Alignment.bottomCenter,
+              children: [
+                FutureBuilder<List<Data>?>(
                   future: list,
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
@@ -223,8 +225,11 @@ class _MenuState extends State<Menu> {
                         color: Colors.white60,
                       );
                     }
-                  }),
-            ]),
+                  },
+                ),
+                const Positioned(bottom: 15, child: MenuButton()),
+              ],
+            ),
           ),
         ),
       ),

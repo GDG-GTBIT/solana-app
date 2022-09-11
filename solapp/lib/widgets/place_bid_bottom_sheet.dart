@@ -4,9 +4,9 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PlaceBidSheet extends StatefulWidget {
-  String disc;
+  final String disc;
 
-  PlaceBidSheet({super.key, required this.disc});
+  const PlaceBidSheet({super.key, required this.disc});
 
   @override
   State<PlaceBidSheet> createState() => _PlaceBidSheetState();
@@ -39,7 +39,7 @@ class _PlaceBidSheetState extends State<PlaceBidSheet> {
               ),
             ),
             Container(
-              padding: EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15),
               margin: const EdgeInsets.only(top: 40),
               height: 120,
               decoration: BoxDecoration(

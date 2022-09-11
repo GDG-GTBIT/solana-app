@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
-import '../widgets/menu_button.dart';
 import '../model/nftataclass.dart';
 import '../widgets/glsom_container.dart';
 import '../screens/bid.dart';
@@ -100,7 +99,7 @@ class _MenuState extends State<Menu> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
                   Column(
@@ -134,7 +133,7 @@ class _MenuState extends State<Menu> {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Container(
@@ -177,7 +176,7 @@ class _MenuState extends State<Menu> {
         body: Container(
           height: double.infinity,
           width: double.infinity,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               image: DecorationImage(image: AssetImage('assets/p2.jpg'))),
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),

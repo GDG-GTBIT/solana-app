@@ -29,12 +29,12 @@ class AboutProject extends StatelessWidget {
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
-              Container(
+              SizedBox(
                 height: 30,
                 width: 45,
                 child: Image.asset('assets/image2.jpg'),
               ),
-              Text(
+              const Text(
                 'About the Project',
                 style: TextStyle(
                   color: Colors.white,
@@ -44,13 +44,13 @@ class AboutProject extends StatelessWidget {
               ),
               Center(
                 child: Container(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.white),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Column(
-                    children: [
+                    children: const [
                       Text(
                         'Malayan tigers are found in the subtropical jungles of peninsular Malaysia. Although they are acknowledged as the national animal of Malaysia, their numbers have dropped drastically over time to the point where they are exteinct. As of the year 2022, only 150 of the species are left, which is precisely why GDSC GTBIT chose to engage on this project. ',
                         style: TextStyle(

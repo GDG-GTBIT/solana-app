@@ -48,6 +48,7 @@ class _MenuState extends State<Menu> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          elevation: 5,
           backgroundColor: Colors.blueGrey,
           bottom: const PreferredSize(
               preferredSize: Size.fromHeight(150),
@@ -220,8 +221,10 @@ class _MenuState extends State<Menu> {
                         }).toList(),
                       );
                     } else {
-                      return const CircularProgressIndicator(
-                        color: Colors.white60,
+                      return Center(
+                        child: CircularProgressIndicator(
+                          color: Colors.white60,
+                        ),
                       );
                     }
                   }),

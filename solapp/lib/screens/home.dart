@@ -23,7 +23,7 @@ class App extends StatelessWidget {
                 color: Colors.transparent,
                 image: DecorationImage(
                     image: AssetImage(
-                      'assets/background.jpg',
+                      'assets/123.jpg',
                     ),
                     fit: BoxFit.fill),
               ),

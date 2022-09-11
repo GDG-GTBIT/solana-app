@@ -1,5 +1,5 @@
 import 'dart:ui';
-
+import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import '../widgets/castBottom.dart';
 
@@ -38,12 +38,7 @@ class _BidNftState extends State<BidNft> {
         elevation: 5,
         title: Text(
           widget.name,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-            fontStyle: FontStyle.normal,
-            fontSize: 18,
-          ),
+          style: GoogleFonts.montserratSubrayada(),
         ),
         backgroundColor: Colors.white,
       ),

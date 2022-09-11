@@ -63,10 +63,11 @@ class _PlaceBidSheetState extends State<PlaceBidSheet> {
                   Icons.shopping_cart,
                   size: 20.0,
                 ),
-                text: '     Added to waiting list',
+                text: '     Add to waiting list',
+                alignment: Alignment.centerRight,
                 textStyle: const TextStyle(
                   color: Colors.white,
-                  fontSize: 18,
+                  fontSize: 15,
                 ),
                 onSubmit: () => _launchUrl(),
                 sliderRotate: false,

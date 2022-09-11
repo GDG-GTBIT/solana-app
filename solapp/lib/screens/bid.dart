@@ -34,6 +34,17 @@ class _BidNftState extends State<BidNft> {
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(color: Colors.black),
+        centerTitle: true,
+        elevation: 5,
+        title: Text(
+          widget.name,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+            fontStyle: FontStyle.normal,
+            fontSize: 18,
+          ),
+        ),
         backgroundColor: Colors.white,
       ),
       body: Container(

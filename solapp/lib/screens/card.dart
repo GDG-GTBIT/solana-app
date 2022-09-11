@@ -225,7 +225,6 @@ class _MenuState extends State<Menu> {
                       );
                     }
                   }),
-              const Positioned(bottom: 15, child: MenuButton()),
             ]),
           ),
         ),

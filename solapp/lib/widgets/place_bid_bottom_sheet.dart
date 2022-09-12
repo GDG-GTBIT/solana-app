@@ -31,7 +31,7 @@ class _PlaceBidSheetState extends State<PlaceBidSheet> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              padding: EdgeInsets.all(5),
+              padding: const EdgeInsets.all(5),
               margin: const EdgeInsets.only(top: 40),
               height: 120,
               decoration: BoxDecoration(

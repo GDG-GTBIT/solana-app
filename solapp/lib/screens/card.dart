@@ -224,7 +224,7 @@ class _MenuState extends State<Menu> {
                         }).toList(),
                       );
                     } else {
-                      return Center(
+                      return const Center(
                         child: CircularProgressIndicator(
                           color: Colors.white60,
                         ),
@@ -232,7 +232,7 @@ class _MenuState extends State<Menu> {
                     }
                   },
                 ),
-                Positioned(bottom: 15, child: MenuButton()),
+                const Positioned(bottom: 15, child: MenuButton()),
               ],
             ),
           ),

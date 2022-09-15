@@ -23,9 +23,9 @@ class App extends StatelessWidget {
                 color: Colors.transparent,
                 image: DecorationImage(
                     image: AssetImage(
-                      'assets/123.jpg',
+                      'assets/ek tiger.png',
                     ),
-                    fit: BoxFit.fill),
+                    fit: BoxFit.cover),
               ),
             ),
             Positioned(

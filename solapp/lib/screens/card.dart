@@ -28,7 +28,7 @@ class _MenuState extends State<Menu> {
     DatabaseReference ref = FirebaseDatabase.instance.ref();
     final getting = await ref.get();
     final ro = getting.value as List<dynamic>;
-    for (var e in ro) {
+    ro.forEach((e) {
       ko.add(Data(
           compiler: e['compiler'].toString(),
           date: e['date'].toString(),
@@ -38,7 +38,18 @@ class _MenuState extends State<Menu> {
           edition: e['edition'].toString(),
           name: e['name'].toString(),
           value: e['value'].toString()));
-    }
+    });
+    // for (var e in ro) {
+    //   ko.add(Data(
+    //       compiler: e['compiler'].toString(),
+    //       date: e['date'].toString(),
+    //       description: e['description'].toString(),
+    //       dna: e['dna'].toString(),
+    //       image: e['image'].toString(),
+    //       edition: e['edition'].toString(),
+    //       name: e['name'].toString(),
+    //       value: e['value'].toString()));
+    // }
 
     return ko;
   }
@@ -53,7 +64,7 @@ class _MenuState extends State<Menu> {
           bottom: const PreferredSize(
               preferredSize: Size.fromHeight(150),
               child: SizedBox(
-                height: 150,
+                height: 15,
                 child: Align(
                   alignment: Alignment.bottomRight,
                 ),
@@ -64,7 +75,7 @@ class _MenuState extends State<Menu> {
                 'assets/tigerdev.jpg',
               ),
               fit: BoxFit.fill,
-              width: 1000,
+              width: double.infinity,
             ),
             Positioned(
               bottom: 30,

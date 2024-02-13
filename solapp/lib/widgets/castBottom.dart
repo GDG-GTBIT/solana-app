@@ -1,5 +1,3 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'gscOwner.dart';
 import 'package:slide_to_act/slide_to_act.dart';
@@ -10,8 +8,10 @@ class Bid extends StatelessWidget {
   final String value;
   final String disc;
   final String name;
+
   const Bid(
-      {super.key, required this.name, required this.value, required this.disc});
+      {Key? key, required this.name, required this.value, required this.disc})
+      : super(key: key);
 
   void openBottomSheet(BuildContext ctx) {
     showModalBottomSheet(
@@ -77,16 +77,9 @@ class Bid extends StatelessWidget {
           height: 55,
           width: 220,
           margin: const EdgeInsets.all(10),
-          // decoration: const BoxDecoration(
-          //   color: Color.fromARGB(255, 255, 255, 255),
-          //   borderRadius: BorderRadius.all(Radius.circular(25)),
-          // ),
           child: Center(
             child: Container(
               alignment: Alignment.bottomCenter,
-              //margin: const EdgeInsets.all(30),
-              //height: 65,
-              //width: 290,
               child: SlideAction(
                 elevation: 0,
                 innerColor: Colors.white,
@@ -100,13 +93,15 @@ class Bid extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 18,
                 ),
-                onSubmit: () => openBottomSheet(context),
+                onSubmit: () {
+                  openBottomSheet(context);
+                  return null;
+                },
                 sliderRotate: false,
               ),
             ),
           ),
         ),
-        //)
       ],
     );
   }

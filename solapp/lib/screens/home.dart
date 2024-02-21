@@ -1,135 +1,131 @@
-import 'package:flutter/material.dart';
-import 'package:slide_to_act/slide_to_act.dart';
-import '../screens/card.dart';
+import 'dart:ui';
 
-void main() {
-  runApp(const App());
+import 'package:flutter/material.dart';
+import 'package:solapp/screens/about.dart';
+import 'package:solapp/screens/card.dart';
+import 'package:firebase_database/firebase_database.dart';
+import '../model/nftataclass.dart';
+import '../widgets/glsom_container.dart';
+import '../screens/bid.dart';
+import '../widgets/menu_button.dart';
+
+
+class MyHomePages extends StatefulWidget {
+  @override
+  _MyHomePagesState createState() => _MyHomePagesState();
 }
 
-class App extends StatelessWidget {
-  const App({super.key});
-  void so() {}
+class _MyHomePagesState extends State<MyHomePages> {
+  late Future<List<Data>> list;
+
+  Future<List<Data>> getdat() async {
+    List<Data> ko = [];
+    DatabaseReference ref = FirebaseDatabase.instance.ref();
+    final getting = await ref.get();
+    final ro = getting.value as List<dynamic>;
+    ro.forEach((e) {
+      ko.add(Data(
+          compiler: e['compiler'].toString(),
+          date: e['date'].toString(),
+          description: e['description'].toString(),
+          dna: e['dna'].toString(),
+          image: e['image'].toString(),
+          edition: e['edition'].toString(),
+          name: e['name'].toString(),
+          value: e['value'].toString()));
+    });
+    return ko;
+  }
+  void initState() {
+    super.initState();
+    list = getdat();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Stack(
-          alignment: Alignment.bottomCenter,
+    return Container(
+      color:  Theme.of(context).colorScheme.secondaryContainer,
+      child: Column(
+
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              height: double.infinity,
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                color: Colors.transparent,
-                image: DecorationImage(
-                    image: AssetImage(
-                      'assets/ek tiger.png',
-                    ),
-                    fit: BoxFit.cover),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                'My NFT',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-            Positioned(
+            Expanded(
               child: Container(
-                height: 450,
+                height: double.infinity,
                 width: double.infinity,
-                alignment: Alignment.bottomCenter,
                 decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Color.fromARGB(255, 255, 255, 255),
-                      Color.fromARGB(230, 255, 255, 255),
-                      Color.fromARGB(180, 255, 255, 255),
-                      Color.fromARGB(0, 255, 255, 255)
+                    image: DecorationImage(
+                        image: AssetImage('assets/p2.jpg'), fit: BoxFit.fill)),
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
+                  child: Stack(
+                    alignment: Alignment.bottomCenter,
+                    children: [
+                      FutureBuilder<List<Data>?>(
+                        future: list,
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+                            final meow = snapshot.data!;
+
+                            return GridView.count(
+                              padding: const EdgeInsets.all(5),
+                              childAspectRatio: (75 / 100),
+                              crossAxisCount: 2,
+                              crossAxisSpacing: 15,
+                              mainAxisSpacing: 7,
+                              shrinkWrap: true,
+                              children: meow.map((e) {
+                                return InkWell(
+                                  onTap: () {
+                                    Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (cont) => BidNft(
+                                        compiler: e.compiler,
+                                        date: e.date,
+                                        description: e.description,
+                                        dna: e.dna,
+                                        edition: e.edition,
+                                        image: e.image,
+                                        name: e.name,
+                                        value: e.value,
+                                      ),
+                                    ));
+                                  },
+                                  child: GlassContainer(
+                                    image: e.image,
+                                    name: e.name,
+                                    value: e.value,
+                                  ),
+                                );
+                              }).toList(),
+                            );
+                          } else {
+                            return const Center(
+                              child: CircularProgressIndicator(
+                                color: Colors.white60,
+                              ),
+                            );
+                          }
+                        },
+                      ),
+                      // const Positioned(bottom: 15, child: MenuButton()),
                     ],
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter,
                   ),
-                ),
-                child: Column(
-                  children: [
-                    const SizedBox(
-                      height: 120.0,
-                      width: 150.0,
-                    ),
-                    Container(
-                      alignment: Alignment.bottomCenter,
-                      width: double.infinity,
-                      child: const Center(
-                        child: Text(
-                          textAlign: TextAlign.center,
-                          'Discover NFT Collections',
-                          style: TextStyle(
-                            fontSize: 40.0,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20.0,
-                      width: 15.0,
-                    ),
-                    const SizedBox(
-                      width: 300,
-                      child: Center(
-                        child: Text(
-                          textAlign: TextAlign.center,
-                          'Explore the top collections of NFTs and buy and sell your NFTs as well',
-                          style: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontSize: 15.0,
-                            color: Colors.black87,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
                 ),
               ),
             ),
-            const SizedBox(
-              height: 10.0,
-              width: 10.0,
-            ),
-            Positioned(
-              child: Container(
-                alignment: Alignment.bottomCenter,
-                margin: const EdgeInsets.all(30),
-                height: 65,
-                width: 290,
-                child: SlideAction(
-                  elevation: 0,
-                  innerColor: Colors.white,
-                  outerColor: Colors.black,
-                  sliderButtonIcon: const Icon(
-                    Icons.arrow_forward_ios_rounded,
-                    size: 25.0,
-                  ),
-                  text: 'Start Experience',
-                  textStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                  ),
-                  onSubmit: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const Menu(),
-                      ),
-                    );
-                  },
-                  sliderRotate: false,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 10.0,
-              width: 10.0,
-            )
           ],
         ),
-      ),
     );
+
   }
 }

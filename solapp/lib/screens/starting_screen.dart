@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:slide_to_act/slide_to_act.dart';
-import 'package:solapp/screens/parent.dart';
+import 'package:solapp/screens/home.dart';
 import '../screens/card.dart';
 
 class App extends StatelessWidget {
@@ -109,9 +109,9 @@ class App extends StatelessWidget {
                     fontSize: 18,
                   ),
                   onSubmit: () {
-                    Navigator.of(context).push(
+                    Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
-                        builder: (context) =>  Parent(),
+                        builder: (context) =>  HomesPage(),
                       ),
                     );
                   },

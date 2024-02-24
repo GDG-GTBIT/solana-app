@@ -1,131 +1,79 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:solapp/screens/about.dart';
 import 'package:solapp/screens/card.dart';
 import 'package:firebase_database/firebase_database.dart';
-import '../model/nftataclass.dart';
-import '../widgets/glsom_container.dart';
-import '../screens/bid.dart';
-import '../widgets/menu_button.dart';
+import 'package:solapp/screens/mynft.dart';
+import 'package:solapp/screens/wallet.dart';
+import 'package:solapp/screens/wallet_home.dart';
 
 
-class MyHomePages extends StatefulWidget {
+
+class HomesPage extends StatefulWidget {
   @override
-  _MyHomePagesState createState() => _MyHomePagesState();
+  _HomesPageState createState() => _HomesPageState();
 }
 
-class _MyHomePagesState extends State<MyHomePages> {
-  late Future<List<Data>> list;
+class _HomesPageState extends State<HomesPage> {
 
-  Future<List<Data>> getdat() async {
-    List<Data> ko = [];
-    DatabaseReference ref = FirebaseDatabase.instance.ref();
-    final getting = await ref.get();
-    final ro = getting.value as List<dynamic>;
-    ro.forEach((e) {
-      ko.add(Data(
-          compiler: e['compiler'].toString(),
-          date: e['date'].toString(),
-          description: e['description'].toString(),
-          dna: e['dna'].toString(),
-          image: e['image'].toString(),
-          edition: e['edition'].toString(),
-          name: e['name'].toString(),
-          value: e['value'].toString()));
-    });
-    return ko;
-  }
+  String? addres;
+  String? privateKey;
+
+  @override
   void initState() {
     super.initState();
-    list = getdat();
+    check();
+
   }
+
+  Future<void> check() async {
+    var pref = await SharedPreferences.getInstance();
+    addres = pref.getString("address");
+    privateKey = pref.getString("key");
+    if(addres==null){
+      final provider = Provider.of<wallet>(context,listen: false);
+      provider.createWallet();
+    }
+    print(addres);
+    print(privateKey);
+  }
+
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color:  Theme.of(context).colorScheme.secondaryContainer,
-      child: Column(
-
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(
-                'My NFT',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                height: double.infinity,
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/p2.jpg'), fit: BoxFit.fill)),
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
-                  child: Stack(
-                    alignment: Alignment.bottomCenter,
-                    children: [
-                      FutureBuilder<List<Data>?>(
-                        future: list,
-                        builder: (context, snapshot) {
-                          if (snapshot.hasData) {
-                            final meow = snapshot.data!;
-
-                            return GridView.count(
-                              padding: const EdgeInsets.all(5),
-                              childAspectRatio: (75 / 100),
-                              crossAxisCount: 2,
-                              crossAxisSpacing: 15,
-                              mainAxisSpacing: 7,
-                              shrinkWrap: true,
-                              children: meow.map((e) {
-                                return InkWell(
-                                  onTap: () {
-                                    Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (cont) => BidNft(
-                                        compiler: e.compiler,
-                                        date: e.date,
-                                        description: e.description,
-                                        dna: e.dna,
-                                        edition: e.edition,
-                                        image: e.image,
-                                        name: e.name,
-                                        value: e.value,
-                                      ),
-                                    ));
-                                  },
-                                  child: GlassContainer(
-                                    image: e.image,
-                                    name: e.name,
-                                    value: e.value,
-                                  ),
-                                );
-                              }).toList(),
-                            );
-                          } else {
-                            return const Center(
-                              child: CircularProgressIndicator(
-                                color: Colors.white60,
-                              ),
-                            );
-                          }
-                        },
-                      ),
-                      // const Positioned(bottom: 15, child: MenuButton()),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ],
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
+        title: Text("Tiger Dev"),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.account_balance_wallet),
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (_)=>WalletPage()));
+              // Add your action here
+            },
+          ),
+        ],
+      ),
+      body: MyNft(),
+      bottomNavigationBar: GestureDetector(
+        onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (_) => Menu()));
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.secondaryContainer,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(100,10,20,10),
+            child: Text("Marketplace",style: TextStyle(fontSize: 25,color: Colors.black),),
+          ),
         ),
+      ),
     );
-
   }
 }
+

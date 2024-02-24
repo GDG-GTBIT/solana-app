@@ -44,6 +44,7 @@ dependencies:
   provider: ^6.1.1
   shared_preferences: ^2.2.2
   web3dart: ^2.7.2
+  pretty_qr_code: ^2.0.3
 
 
 

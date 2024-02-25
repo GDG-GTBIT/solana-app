@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:slide_to_act/slide_to_act.dart';
 import 'package:solapp/screens/home.dart';
+import 'package:solapp/walletFunctions/loading_page.dart';
 import '../screens/card.dart';
 
 class App extends StatelessWidget {
@@ -111,7 +112,7 @@ class App extends StatelessWidget {
                   onSubmit: () {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
-                        builder: (context) =>  HomesPage(),
+                        builder: (context) =>  LoadingPage(),
                       ),
                     );
                   },

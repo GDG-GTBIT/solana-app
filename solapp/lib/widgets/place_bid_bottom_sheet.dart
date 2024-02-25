@@ -41,7 +41,7 @@ class _PlaceBidSheetState extends State<PlaceBidSheet> {
               child: ListView(children: [
                 Text(
                   widget.disc,
-                  style: GoogleFonts.kalam(),
+                  style: GoogleFonts.kalam(color: Colors.black87),
                 ),
               ]),
             ),

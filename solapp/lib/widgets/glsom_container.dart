@@ -73,7 +73,7 @@ class _GlassContainerState extends State<GlassContainer> {
                     height: 25,
                     width: 60,
                     child: Text(
-                      '${widget.value}  SOL',
+                      '${widget.value}  ETH',
                       textAlign: TextAlign.start,
                       style: const TextStyle(
                         fontSize: 10,

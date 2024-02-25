@@ -1,135 +1,50 @@
-import 'package:flutter/material.dart';
-import 'package:slide_to_act/slide_to_act.dart';
-import '../screens/card.dart';
+import 'dart:ui';
 
-void main() {
-  runApp(const App());
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:solapp/screens/about.dart';
+import 'package:solapp/screens/card.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:solapp/screens/mynft.dart';
+import 'package:solapp/screens/wallet.dart';
+import 'package:solapp/screens/wallet_home.dart';
+
+class HomesPage extends StatefulWidget {
+  @override
+  _HomesPageState createState() => _HomesPageState();
 }
 
-class App extends StatelessWidget {
-  const App({super.key});
-  void so() {}
+class _HomesPageState extends State<HomesPage> {
+  String? addres;
+  String? privateKey;
+
+  @override
+  void initState() {
+    super.initState();
+    check();
+  }
+
+  Future<void> check() async {
+    var pref = await SharedPreferences.getInstance();
+    addres = pref.getString("address");
+    privateKey = pref.getString("key");
+    if (addres == null) {
+      final provider = Provider.of<wallet>(context, listen: false);
+      provider.createWallet();
+    }
+    print(addres);
+    print(privateKey);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Stack(
-          alignment: Alignment.bottomCenter,
-          children: [
-            Container(
-              height: double.infinity,
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                color: Colors.transparent,
-                image: DecorationImage(
-                    image: AssetImage(
-                      'assets/ek tiger.png',
-                    ),
-                    fit: BoxFit.cover),
-              ),
-            ),
-            Positioned(
-              child: Container(
-                height: 450,
-                width: double.infinity,
-                alignment: Alignment.bottomCenter,
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Color.fromARGB(255, 255, 255, 255),
-                      Color.fromARGB(230, 255, 255, 255),
-                      Color.fromARGB(180, 255, 255, 255),
-                      Color.fromARGB(0, 255, 255, 255)
-                    ],
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter,
-                  ),
-                ),
-                child: Column(
-                  children: [
-                    const SizedBox(
-                      height: 120.0,
-                      width: 150.0,
-                    ),
-                    Container(
-                      alignment: Alignment.bottomCenter,
-                      width: double.infinity,
-                      child: const Center(
-                        child: Text(
-                          textAlign: TextAlign.center,
-                          'Discover NFT Collections',
-                          style: TextStyle(
-                            fontSize: 40.0,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20.0,
-                      width: 15.0,
-                    ),
-                    const SizedBox(
-                      width: 300,
-                      child: Center(
-                        child: Text(
-                          textAlign: TextAlign.center,
-                          'Explore the top collections of NFTs and buy and sell your NFTs as well',
-                          style: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontSize: 15.0,
-                            color: Colors.black87,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 10.0,
-              width: 10.0,
-            ),
-            Positioned(
-              child: Container(
-                alignment: Alignment.bottomCenter,
-                margin: const EdgeInsets.all(30),
-                height: 65,
-                width: 290,
-                child: SlideAction(
-                  elevation: 0,
-                  innerColor: Colors.white,
-                  outerColor: Colors.black,
-                  sliderButtonIcon: const Icon(
-                    Icons.arrow_forward_ios_rounded,
-                    size: 25.0,
-                  ),
-                  text: 'Start Experience',
-                  textStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                  ),
-                  onSubmit: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const Menu(),
-                      ),
-                    );
-                  },
-                  sliderRotate: false,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 10.0,
-              width: 10.0,
-            )
-          ],
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
+        title: Text("My NFT'S"), centerTitle: true,
       ),
+      body: MyNft(),
     );
   }
 }

@@ -23,15 +23,9 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -50,22 +44,38 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDRa6mmEbNSqtap4Y19nLh1kTImmXycGPY',
-    appId: '1:155731381226:web:462ae5a8185a9763b90093',
-    messagingSenderId: '155731381226',
-    projectId: 'tigerdev-407fe',
-    authDomain: 'tigerdev-407fe.firebaseapp.com',
-    databaseURL: 'https://tigerdev-407fe-default-rtdb.firebaseio.com',
-    storageBucket: 'tigerdev-407fe.appspot.com',
-    measurementId: 'G-DG1DJW6E82',
+    apiKey: 'AIzaSyDWy-QREAO92h18DgqQmX_tOV1nhrABTWQ',
+    appId: '1:77019528060:web:3bd5b9c988b58b117d02f9',
+    messagingSenderId: '77019528060',
+    projectId: 'solapp-e41fb',
+    authDomain: 'solapp-e41fb.firebaseapp.com',
+    storageBucket: 'solapp-e41fb.appspot.com',
+    measurementId: 'G-BC2FBQBPLT',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDUCrEsw-nj_ytpB-apLPZg6lZOsAyV_A0',
-    appId: '1:155731381226:android:1e9edebb7fd90f56b90093',
-    messagingSenderId: '155731381226',
-    projectId: 'tigerdev-407fe',
-    databaseURL: 'https://tigerdev-407fe-default-rtdb.firebaseio.com',
-    storageBucket: 'tigerdev-407fe.appspot.com',
+    apiKey: 'AIzaSyACFm04Sku8IwICBe6vp665DJRT-pELWYo',
+    appId: '1:77019528060:android:26ecb56ab1bb6fd47d02f9',
+    messagingSenderId: '77019528060',
+    projectId: 'solapp-e41fb',
+    storageBucket: 'solapp-e41fb.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyCZqqrkaPlbFKEIAtDjh3yBbGtgx9aNlsg',
+    appId: '1:77019528060:ios:01c768eaba7bd0417d02f9',
+    messagingSenderId: '77019528060',
+    projectId: 'solapp-e41fb',
+    storageBucket: 'solapp-e41fb.appspot.com',
+    iosBundleId: 'com.example.solapp',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyCZqqrkaPlbFKEIAtDjh3yBbGtgx9aNlsg',
+    appId: '1:77019528060:ios:01c768eaba7bd0417d02f9',
+    messagingSenderId: '77019528060',
+    projectId: 'solapp-e41fb',
+    storageBucket: 'solapp-e41fb.appspot.com',
+    iosBundleId: 'com.example.solapp',
   );
 }

@@ -1,20 +1,28 @@
 import 'dart:ui';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:provider/provider.dart';
+import 'package:solapp/screens/home.dart';
 
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:solapp/walletFunctions/home_page.dart';
+
+import 'package:solapp/walletFunctions/loading_page.dart';
+import 'package:solapp/walletFunctions/providers/wallet_services.dart';
+import 'package:web3dart/web3dart.dart';
 import '../model/nftataclass.dart';
 import '../widgets/glsom_container.dart';
 import '../screens/bid.dart';
 import '../widgets/menu_button.dart';
 
-class Menu extends StatefulWidget {
+class Menu extends ConsumerStatefulWidget {
   const Menu({super.key});
 
   @override
-  State<Menu> createState() => _MenuState();
+  ConsumerState<Menu> createState() => _MenuState();
 }
 
-class _MenuState extends State<Menu> {
+class _MenuState extends ConsumerState<Menu> {
   final textController = TextEditingController();
   late Future<List<Data>> list;
   @override
@@ -56,6 +64,7 @@ class _MenuState extends State<Menu> {
 
   @override
   Widget build(BuildContext cont) {
+    double balance = ref.watch(balanceProvider);
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -78,8 +87,8 @@ class _MenuState extends State<Menu> {
               width: double.infinity,
             ),
             Positioned(
-              bottom: 30,
-              right: 30,
+              bottom: 20,
+              right: 20,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -94,18 +103,20 @@ class _MenuState extends State<Menu> {
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text(
-                          '0.53',
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          ),
+                      children: [
+                        IconButton(
+                          icon: Icon(Icons.account_balance_wallet),
+                          visualDensity: VisualDensity.compact,
+                          onPressed: () {
+                            Navigator.of(context).push(
+                                MaterialPageRoute(builder: (_) => HomePage()));
+                            // Add your action here
+                          },
                         ),
                         Text(
-                          'Lorem Ipsum',
+                          'Wallet',
                           style: TextStyle(
-                            fontSize: 7,
+                            fontSize: 8,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -120,7 +131,7 @@ class _MenuState extends State<Menu> {
                       Container(
                         // margin: const EdgeInsets.only(top: 8),
                         width: 60,
-                        height: 38,
+                        height: 63,
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.transparent),
                           borderRadius: BorderRadius.circular(20),
@@ -128,16 +139,20 @@ class _MenuState extends State<Menu> {
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
-                              '0.53',
-                              style: TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.bold,
-                              ),
+                          children: [
+                            IconButton(
+                              icon: Icon(Icons.shopping_cart_rounded),
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (_) => HomesPage(),
+                                  ),
+                                );
+                                // Add your action here
+                              },
                             ),
                             Text(
-                              'Lorem Ipsum',
+                              'owned',
                               style: TextStyle(
                                 fontSize: 8,
                                 fontWeight: FontWeight.bold,
@@ -152,7 +167,7 @@ class _MenuState extends State<Menu> {
                       Container(
                         // margin: const EdgeInsets.only(top: 8),
                         width: 60,
-                        height: 38,
+                        height: 50,
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.transparent),
                           borderRadius: BorderRadius.circular(20),
@@ -160,16 +175,16 @@ class _MenuState extends State<Menu> {
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
+                          children: [
                             Text(
-                              '0.53',
+                              balance.toString().substring(0, 3),
                               style: TextStyle(
-                                fontSize: 13,
+                                fontSize: 12,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             Text(
-                              'Lorem Ipsum',
+                              'Bal',
                               style: TextStyle(
                                 fontSize: 8,
                                 fontWeight: FontWeight.bold,

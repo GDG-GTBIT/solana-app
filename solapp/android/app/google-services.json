@@ -1,37 +1,26 @@
 {
   "project_info": {
-    "project_number": "155731381226",
-    "firebase_url": "https://tigerdev-407fe-default-rtdb.firebaseio.com",
-    "project_id": "tigerdev-407fe",
-    "storage_bucket": "tigerdev-407fe.appspot.com"
+    "project_number": "77019528060",
+    "project_id": "solapp-e41fb",
+    "storage_bucket": "solapp-e41fb.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:155731381226:android:1e9edebb7fd90f56b90093",
+        "mobilesdk_app_id": "1:77019528060:android:26ecb56ab1bb6fd47d02f9",
         "android_client_info": {
           "package_name": "com.example.solapp"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "155731381226-lbcf9ce92ettm09ivbkogtiriepm8cuj.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDUCrEsw-nj_ytpB-apLPZg6lZOsAyV_A0"
+          "current_key": "AIzaSyACFm04Sku8IwICBe6vp665DJRT-pELWYo"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "155731381226-lbcf9ce92ettm09ivbkogtiriepm8cuj.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

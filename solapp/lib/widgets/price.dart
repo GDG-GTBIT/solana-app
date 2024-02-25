@@ -21,10 +21,10 @@ class Price extends StatelessWidget {
             decoration: const BoxDecoration(
                 color: Colors.black,
                 borderRadius: BorderRadius.all(Radius.circular(10))),
-            child: const Padding(
+            child: Padding(
               padding: EdgeInsets.all(3.0),
               child: CircleAvatar(
-                backgroundImage: AssetImage('assets/solana_logo.png'),
+                child: Image.asset('assets/ethr.png', fit: BoxFit.contain),
                 backgroundColor: Colors.black,
               ),
             ),
